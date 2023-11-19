@@ -10,3 +10,7 @@ class NodeType(Enum):
 class Option(Enum):
     LEFT = "left"
     RIGHT = "right"
+
+class SetType(Enum):
+    INDIVIDUAL = "individual"
+    GROUP = "group"

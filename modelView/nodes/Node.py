@@ -1,4 +1,4 @@
-from modelView.enum.Types import NodeType
+from modelView.Types import NodeType
 
 class Node:
     def __init__(self):

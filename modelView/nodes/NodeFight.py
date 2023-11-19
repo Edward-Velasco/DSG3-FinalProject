@@ -1,4 +1,4 @@
-from modelView.enum.Types import NodeType
+from modelView.Types import NodeType
 from modelView.nodes.Node import Node
 
 class NodeFight(Node) :
