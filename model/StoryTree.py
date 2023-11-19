@@ -1,6 +1,6 @@
 # Ejemplo de estructura de árbol
 
-from ..modelView.enum.Types import NodeType
+from modelView.enum.Types import NodeType
 
 StoryTree = {
     0x001: {
@@ -46,3 +46,4 @@ StoryTree = {
         'content': "Game development in progres.."
     }
 }
+

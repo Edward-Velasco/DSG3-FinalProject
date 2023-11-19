@@ -1,5 +1,5 @@
-from ..enum.Types import NodeType
-from Node import Node
+from modelView.enum.Types import NodeType
+from modelView.nodes.Node import Node
 
 class NodeFight(Node) :
     def __init__(self) :
