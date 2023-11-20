@@ -11,6 +11,11 @@ class Option(Enum):
     LEFT = "left"
     RIGHT = "right"
 
-class SetType(Enum):
-    INDIVIDUAL = "individual"
-    GROUP = "group"
+class InfinityStones(Enum):
+    GREEN = "green"
+    BLUE = "blue"
+    PURPLE = "purple"
+    YELLOW = "yellow"
+    RED = "red"
+    ORANGE = "orange"
+

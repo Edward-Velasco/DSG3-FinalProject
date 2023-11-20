@@ -1,5 +1,6 @@
 from modelView.Deadpool import Deadpool
-from modelView.Types import NodeType, SetType, Option
 
+# disjointSets.build()
 deadpool = Deadpool()
-
+deadpool.start()
+# GUI.start()

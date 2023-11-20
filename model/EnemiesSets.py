@@ -1,6 +1,6 @@
 # Ejemplo de conjuntos disyuntos
 
-from modelView.enum.Types import SetType
+from modelView.Types import SetType
 from queue import Queue
 
 EnemiesSets = {

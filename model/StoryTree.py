@@ -1,6 +1,29 @@
 # Ejemplo de estructura de árbol
 
-from modelView.enum.Types import NodeType
+from modelView.Types import NodeType
+
+StoryTreeCorrect = {
+    0x001: {
+        'type': NodeType.STORY,
+        'content': "Hello world!",
+        'options': ["Hello there", "General Kenobi"],
+        'children': [0x002, 0x003]
+    },
+    0x002: {
+        'type': NodeType.CONVERSATION,
+        'image': "route/Image",
+        'content': "Idk",
+        'options': ["A", "B"],
+        'children': [0x004, 0x005]
+    },
+    0x003: {
+        'type': NodeType.FIGHT,
+        'content': ""
+    }
+}
+
+
+
 
 StoryTree = {
     0x001: {
