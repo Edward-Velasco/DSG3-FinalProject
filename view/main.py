@@ -5,39 +5,34 @@ from classes.Button import Button
 from classes.TextOnlyBox import TextOnlyBox
 from classes.OptionBox import OptionBox
 
+# Import utility functions
+from utils import get_font
+
 pygame.init()
 
 # Screen initialization
 screenSize = [1280, 720]
 screen = pygame.display.set_mode(screenSize)
 
-backgroundStartScreen = pygame.image.load("assets/backgrounds/startingScreen.jpg")
+backgroundStartScreen = pygame.image.load("view/assets/backgrounds/start_menu_bg.png")
 
 # Executable customizations
-pygame.display.set_caption("Escape Alive")
-pygame.display.set_icon(pygame.image.load("assets/logo.png"))
-
-questions_background = pygame.image.load("assets/backgrounds/questionBackGround.jpg")
-
-
-# Return the Roboto loaded pygame font for a giving size
-def get_font(font_size, font_style):
-    return pygame.font.Font(f"assets/fonts/Roboto-{font_style}.ttf", font_size)
-
+pygame.display.set_caption("Infinity Deadpool")
+pygame.display.set_icon(pygame.image.load("view/assets/misc/logo.png"))
 
 # The function that loads the starting menu
-def main_menu():
-    start_button_background = pygame.image.load("assets/buttons/startButton.png")
+def start_gui():
+    start_button_background = pygame.image.load("view/assets/buttons/start_button.png")
     start_game_button = Button(
         background_image=start_button_background,
         center_coordinates_pair=[
             (screenSize[0]/2),
-            (screenSize[1]/2)+(start_button_background.get_height()*2)
+            (screenSize[1]/2)+(start_button_background.get_height()*2.5)
         ],
-        text_input='Start',
+        text_input=None,
         text_color="White",
-        font=get_font(50, 'Thin'),
-        text_hovering_color="Gray",
+        font=get_font(50),
+        text_hovering_color="White",
         uuid="123"
     )
 
@@ -59,30 +54,22 @@ def main_menu():
                 sys.exit()
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if start_game_button.check_mouse_hover(mouse_position):
-                    return game_introduction()
+                    return load_introduction()
 
         # Show the changes
         pygame.display.flip()
 
+# Function that displays the series of introductory cutscenes
+def load_introduction():
+    cutscenes_iterator = 1
+    cutscene_path = f"view/assets/backgrounds/introduction/cutscene_{cutscenes_iterator}.png"
 
-def game_introduction():
-    instructions_text = "Despiertas de golpe en un lugar oscuro, sin recordar cómo llegaste ahí y con la impresión de no haber comido en días. Intentas salir por la puerta pero está cerrada con llave."
-    instructions_background = pygame.image.load("assets/backgrounds/textBoxDot.png")
+    active_cutscene_bg = pygame.image.load(cutscene_path)
 
-    instructions_container = TextOnlyBox(
-        background_image=instructions_background,
-        center_coordinates_pair=[screenSize[0]/2, screenSize[1]/2],
-        text_input=instructions_text,
-        text_color="White",
-        font=get_font(25, 'Thin'),
-    )
-
+    # Cycle to run per frame
     while True:
-        screen.blit(questions_background, (0, 0))
-        instructions_container.multiline_text_render(screen, 0)
-
-        # Show the changes
-        pygame.display.flip()
+        # Render the background into the screen
+        screen.blit(active_cutscene_bg, (0, 0))
 
         # Check for user inputs
         for event in pygame.event.get():
@@ -90,63 +77,16 @@ def game_introduction():
                 pygame.quit()
                 sys.exit()
             elif event.type == pygame.MOUSEBUTTONDOWN:
-                mouse_position = pygame.mouse.get_pos()
-                if instructions_container.check_mouse_hover(mouse_position):
-                    return prompt_choices()
-
-
-def prompt_choices():
-    choices_background_container = pygame.image.load("assets/backgrounds/choicesContainer.png")
-    single_choice_background = pygame.image.load("assets/backgrounds/choiceBox.png")
-
-    choices = []
-    choices_data = [
-        [pygame.image.load("assets/backgrounds/choiceWindow.png"), "Salir por la ventana", "opt_1"],
-        [pygame.image.load("assets/backgrounds/choiceDoor.png"), "Esconderte entre los arbustos", "opt_2"],
-        [pygame.image.load("assets/backgrounds/choiceBed.png"), "Tomar una pala cercana como arma", "opt_3"]
-    ]
-
-    # 199 x 242 -> OptionBox size
-    # 734 x 391 -> Choices container bg
-    # TODO: Function for retrieving button functions
-
-    # Feed the choices array to later render each one of them
-    for image_iterator in range(0, len(choices_data)):
-        new_choice = OptionBox(
-            background_image=single_choice_background,
-            center_coordinates_pair=[(screenSize[0]/3)-10+(220*image_iterator), (screenSize[1]/2)+25],
-            text_input=choices_data[image_iterator][1],
-            text_color="White",
-            font=get_font(19, 'Thin'),
-            choice_image=choices_data[image_iterator][0],
-            uuid=choices_data[image_iterator][2]
-        )
-        choices.append(new_choice)
-
-    choices_container = TextOnlyBox(
-        background_image=choices_background_container,
-        center_coordinates_pair=[screenSize[0]/2, screenSize[1]/2],
-        text_input="¿Qué haces?",
-        text_color="White",
-        font=get_font(45, 'Thin')
-    )
-
-    while True:
-        screen.blit(questions_background, (0, 0))
-        choices_container.choice_statement_single_line(screen)
-
-        for single_choice in choices:
-            single_choice.multiline_text_render(screen, 125)
+                if cutscenes_iterator == 4:
+                    # When the last intro image is reached, move to whatever is next
+                    return
+                cutscenes_iterator += 1
+                cutscene_path = f"view/assets/backgrounds/introduction/cutscene_{cutscenes_iterator}.png"
+                active_cutscene_bg = pygame.image.load(cutscene_path)
 
         # Show the changes
         pygame.display.flip()
 
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
-
-
-main_menu()
+start_gui()
 
 pygame.quit()
