@@ -1,6 +1,9 @@
-from modelView.Deadpool import Deadpool
+"""from modelView.Deadpool import Deadpool
 
-# disjointSets.build()
+disjointSets.build()
 deadpool = Deadpool()
-deadpool.start()
-# GUI.start()
+deadpool.start()"""
+
+from view.main import start_gui
+
+start_gui()

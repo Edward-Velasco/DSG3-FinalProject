@@ -1,12 +1,12 @@
 import pygame
 import sys
 # Create the built Classes
-from classes.Button import Button
-from classes.TextOnlyBox import TextOnlyBox
-from classes.OptionBox import OptionBox
+from view.classes.Button import Button
+from view.classes.TextOnlyBox import TextOnlyBox
+from view.classes.OptionBox import OptionBox
 
 # Import utility functions
-from utils import get_font
+from view.utils import get_font
 
 pygame.init()
 
