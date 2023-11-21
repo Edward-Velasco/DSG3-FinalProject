@@ -54,7 +54,7 @@ def start_gui():
                 sys.exit()
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if start_game_button.check_mouse_hover(mouse_position):
-                    return load_introduction()
+                    load_introduction()
 
         # Show the changes
         pygame.display.flip()
