@@ -2,7 +2,7 @@ from enum import Enum
 
 class NodeType(Enum):
     STORY = "story"
-    CONVERSATION = "conversation"
+    DIALOGUE = "dialogue"
     FIGHT = "fight"
     SPECIAL = "special"
     UNDEFINED = "undefined"
