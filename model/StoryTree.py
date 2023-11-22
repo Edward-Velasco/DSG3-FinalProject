@@ -18,7 +18,7 @@ StoryTree = {
         'characterPictureRoute': "/"
     },
     3: {
-        'type': NodeType.CONVERSATION,
+        'type': NodeType.DIALOGUE,
         'content': "Alright, you are getting therapy",
         'options': ["Try again", "Fuck it"],
         'children': [4, 4],
