@@ -1,17 +1,14 @@
-class TextContainer:
-    def __init__(self, background_image, center_coordinates_pair, text_input, text_color, font):
-        self.background = background_image
+from .ImageContainer import ImageContainer
 
-        # Decompose the coordinates duple into each property (Coords to the center of the button)
-        self.x_coord = center_coordinates_pair[0]
-        self.y_coord = center_coordinates_pair[1]
+
+class TextContainer(ImageContainer):
+    def __init__(self, background_image, center_coordinates_pair, text_input, text_color, font):
+        super().__init__(background_image, center_coordinates_pair)
 
         # Text options
         self.text_input = text_input
         self.text_color = text_color
         self.font = font
-
-        self.rect = self.background.get_rect(center=(self.x_coord, self.y_coord))
 
     def check_mouse_hover(self, mouse_position):
         if mouse_position[0] in range(self.rect.left, self.rect.right) and mouse_position[1] in range(self.rect.top, self.rect.bottom):
