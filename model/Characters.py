@@ -47,5 +47,14 @@ Characters = {
         'miniatureDeadRoute': "/",
         'state': True
     },
+    5: {
+        'name': "Spider-man",
+        'fightContent': "Never forget the hyphen between Spider and man",
+        'fightButtonText': "C'mon spidey, don't make me do this, you are my best friend",
+        'pictureRoute': "/",
+        'miniatureRoute': "/",
+        'miniatureDeadRoute': "/",
+        'state': True
+    }
 }
 
