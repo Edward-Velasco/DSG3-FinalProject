@@ -1,5 +1,5 @@
 from .TextContainer import TextContainer
-
+import pygame
 
 class Button(TextContainer):
     def __init__(self, background_image, center_coordinates_pair, text_input, text_color, font, text_hovering_color, uuid):
@@ -20,13 +20,14 @@ class Button(TextContainer):
 
         self.text_rect = self.text.get_rect(center=(self.x_coord, self.y_coord))
 
-    def screen_render(self, screen):
-        if self.background is not None:
-            screen.blit(self.background, self.rect)
-        screen.blit(self.text, self.text_rect)
-
-    def change_color(self, position):
-        if self.check_mouse_hover(position):
+    def display_button_update(self, screen):
+        # Check if the button is being hovered and update it's color
+        if self.check_mouse_hover(pygame.mouse.get_pos()):
             self.text = self.font.render(self.text_input, True, self.hover_color)
         else:
             self.text = self.font.render(self.text_input, True, self.text_color)
+
+        # Show the button into the display
+        if self.background is not None:
+            screen.blit(self.background, self.rect)
+        screen.blit(self.text, self.text_rect)

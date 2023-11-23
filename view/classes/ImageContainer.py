@@ -1,6 +1,8 @@
+import pygame
+
 class ImageContainer:
     def __init__(self, background_image, center_coordinates_pair):
-        self.background = background_image
+        self.background = pygame.image.load(background_image)
 
         # Decompose the coordinates duple into each property (Coords to the center of the button)
         self.x_coord = center_coordinates_pair[0]
