@@ -11,7 +11,7 @@ class TextContainer(ImageContainer):
         self.font = font
 
     def check_mouse_hover(self, mouse_position):
-        if mouse_position[0] in range(self.rect.left, self.rect.right) and mouse_position[1] in range(self.rect.top, self.rect.bottom):
+        if self.rect.collidepoint(mouse_position):
             return True
         return False
 
