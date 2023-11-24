@@ -15,6 +15,15 @@ class TextContainer(ImageContainer):
             return True
         return False
 
+
+    def character_label_render(self, screen):
+        screen.blit(self.background, self.rect)
+
+        text_font = self.font.render(self.text_input, True, self.text_color)
+        text_rect = text_font.get_rect(left=self.x_coord-(164/1.8) ,centery=self.y_coord)
+
+        screen.blit(text_font, text_rect)
+
     def multiline_text_render(self, screen, y_axis_offset):
         screen.blit(self.background, self.rect)
 
