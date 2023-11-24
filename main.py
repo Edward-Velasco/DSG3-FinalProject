@@ -8,9 +8,10 @@ deadpool = Deadpool(gui)
 gui.start(deadpool)"""
 
 from view.main import GameInterface
-from model.StoryTree import StoryTree
+from view.test import Root_test_tree, Dialogue_test_node, Fight_test_node
 
 GameScreen = GameInterface()
 #GameScreen.start_gui()
+#GameScreen.display_story_node(Root_test_tree)
 
-GameScreen.display_story_node(StoryTree[1])
+GameScreen.display_character_node(Fight_test_node)
