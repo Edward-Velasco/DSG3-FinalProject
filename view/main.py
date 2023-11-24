@@ -1,13 +1,18 @@
 import pygame
 import sys
 
-# Create the built Classes
+# Import the visual classes
 from view.classes.Button import Button
-from view.classes.TextOnlyBox import TextOnlyBox
+from view.classes.TextContainer import TextContainer
 from view.classes.OptionBox import OptionBox
+from view.classes.ImageContainer import ImageContainer
 
 # Import utility functions
 from view.utils import get_font
+
+# Import backend related stuff
+from modelView.Types import Option, NodeType
+from modelView.nodes.NodeCharacter import NodeCharacter
 
 class GameInterface:
     def __init__(self):
@@ -16,6 +21,8 @@ class GameInterface:
         # Screen initialization
         self.display_size = [1280, 720]
         self.screen = pygame.display.set_mode(self.display_size)
+
+        self.choice_buttons = None
 
         # Executable customizations
         pygame.display.set_caption("Infinity Deadpool")
@@ -38,7 +45,7 @@ class GameInterface:
             text_color="White",
             font=get_font(50),
             text_hovering_color="White",
-            uuid="123"
+            uuid="PLACEHOLDER"
         )
 
         # Cycle to run per frame
@@ -81,43 +88,106 @@ class GameInterface:
             # Show the changes
             pygame.display.flip()
 
+    def set_buttons(self, data_node, button_count: int):
+        if button_count == 2:
+            left_choice_button = Button(
+                background_image="view/assets/buttons/choice_left_button.png",
+                center_coordinates_pair=[292+35+(434/2), 316+258+(85/2)],
+                text_input=data_node.getOptions()[0],
+                text_color="White",
+                font=get_font(50),
+                text_hovering_color="Gray",
+                uuid=Option.LEFT
+            )
+
+            right_choice_button = Button(
+                background_image="view/assets/buttons/choice_right_button.png",
+                center_coordinates_pair=[292+490+(434/2), 316+258+(85/2)],
+                text_input=data_node.getOptions()[1],
+                text_color="White",
+                font=get_font(50),
+                text_hovering_color="Gray",
+                uuid=Option.RIGHT
+            )
+
+            self.choice_buttons = [left_choice_button, right_choice_button]
+        else:
+            choice_central_button = Button(
+                background_image="view/assets/buttons/choice_central_button.png",
+                center_coordinates_pair=[292+(964/2), 316+258+(85/2)],
+                text_input=data_node.getOptions()[0],
+                text_color="White",
+                font=get_font(50),
+                text_hovering_color="Gray",
+                uuid=Option.LEFT
+            )
+
+            self.choice_buttons = [choice_central_button]
+
     def display_story_node(self, story_node):
         self.set_background("view/assets/backgrounds/nodes_bg.png")
 
-        story_text_box = TextOnlyBox(
+        story_text_box = TextContainer(
             background_image="view/assets/backgrounds/text_container_bg.png",
             center_coordinates_pair=[292+(964/2), 316+(373/2)],
-            text_input=story_node["content"],
+            text_input=story_node.getContent(),
             text_color="Black",
             font=get_font(30)
         )
 
-        left_choice_button = Button(
-            background_image="view/assets/buttons/choice_left_button.png",
-            center_coordinates_pair=[292+35+(434/2), 316+258+(85/2)],
-            text_input=story_node["options"][0],
-            text_color="White",
-            font=get_font(50),
-            text_hovering_color="Gray",
-            uuid="PLACEHOLDER"
-        )
-
-        right_choice_button = Button(
-            background_image="view/assets/buttons/choice_right_button.png",
-            center_coordinates_pair=[292+490+(434/2), 316+258+(85/2)],
-            text_input=story_node["options"][1],
-            text_color="White",
-            font=get_font(50),
-            text_hovering_color="Gray",
-            uuid="PLACEHOLDER"
-        )
-
-        # TODO: UUID system for button class :D
+        self.set_buttons(story_node, 2)
 
         while True:
             story_text_box.multiline_text_render(self.screen, 0)
-            left_choice_button.display_button_update(self.screen)
-            right_choice_button.display_button_update(self.screen)
+
+            for button in self.choice_buttons:
+                button.display_button_update(self.screen)
+
+            # Check for user inputs
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+
+            # Show the changes
+            pygame.display.flip()
+
+    def display_character_node(self, char_node):
+        self.set_background("view/assets/backgrounds/nodes_bg.png")
+
+        story_text_box = TextContainer(
+            background_image="view/assets/backgrounds/text_container_bg.png",
+            center_coordinates_pair=[292+(964/2), 316+(373/2)],
+            text_input=char_node.getContent(),
+            text_color="Black",
+            font=get_font(30)
+        )
+
+        character_icon = ImageContainer(
+            background_image=char_node.getCharacterPictureRoute(),
+            center_coordinates_pair=[story_text_box.rect.topleft[0]+61, story_text_box.rect.top-31]
+        )
+
+        character_label = TextContainer(
+            background_image="view/assets/characters/character_label.png",
+            center_coordinates_pair=[story_text_box.rect.topleft[0]+(164*3/2), story_text_box.rect.top-11],
+            text_input=char_node.getCharacterName(),
+            text_color="White",
+            font=get_font(42)
+        )
+
+        if char_node.type == NodeType.DIALOGUE:
+            self.set_buttons(char_node, 2)
+        else:
+            self.set_buttons(char_node, 1)
+
+        while True:
+            story_text_box.multiline_text_render(self.screen, 31)
+            character_label.character_label_render(self.screen)
+            character_icon.image_only_render(self.screen)
+
+            for button in self.choice_buttons:
+                button.display_button_update(self.screen)
 
             # Check for user inputs
             for event in pygame.event.get():
