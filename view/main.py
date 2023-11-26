@@ -15,8 +15,7 @@ from modelView.Types import Option, NodeType
 from modelView.nodes.NodeCharacter import NodeCharacter
 
 class GameInterface:
-    def __init__(self, deadpool_instance):
-        self.deadpool_instance = deadpool_instance
+    def __init__(self):
         pygame.init()
 
         # Screen initialization
@@ -34,8 +33,40 @@ class GameInterface:
         new_background = pygame.image.load(image_route)
         self.screen.blit(new_background, (0, 0))
 
+
+    def button_identifier(self, mouse_position):
+        clicked_button = None
+
+        # Identify the processed button
+        for button_obj in self.choice_buttons:
+            if button_obj.check_mouse_hover(mouse_position):
+                clicked_button = button_obj.id
+                break
+
+        # Return if no button was found
+        if not clicked_button:
+            return
+
+        # Execute the action related to that button
+        if clicked_button == "Deadbook":
+            self.display_deadbook()
+        elif clicked_button == "ABC":
+            pass
+
+
+    # Deals with all events in each frame
+    def core_event_handler(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                self.button_identifier(pygame.mouse.get_pos())
+
+
     # The function that loads the starting menu
-    def start_gui(self):
+    def start_gui(self, deadpool_instance):
+        self.deadpool_instance = deadpool_instance
         start_game_button = Button(
             background_image="view/assets/buttons/start_button.png",
             center_coordinates_pair=[
@@ -46,7 +77,7 @@ class GameInterface:
             text_color="White",
             font=get_font(50),
             text_hovering_color="White",
-            uuid="PLACEHOLDER"
+            uuid="Start_Button"
         )
 
         # Cycle to run per frame
@@ -68,7 +99,7 @@ class GameInterface:
             pygame.display.flip()
 
         # Function that displays the series of introductory cutscenes
-    def load_introduction(self):
+    def load_introduction(self, deadpool_instance):
         cutscenes_iterator = 1
 
         # Cycle to run per frame
@@ -169,15 +200,9 @@ class GameInterface:
                         self.set_background("view/assets/backgrounds/nodes_bg.png")
                         return
 
-
             # Show the changes
             pygame.display.flip()
 
-
-    def button_identifier(self, mouse_position):
-        for button_obj in self.choice_buttons:
-            if button_obj.rect.collidepoint(mouse_position):
-                return button_obj.id
 
     def display_story_node(self, story_node):
         self.set_background("view/assets/backgrounds/nodes_bg.png")
@@ -195,18 +220,7 @@ class GameInterface:
         while True:
             story_text_box.multiline_text_render(self.screen, 0)
 
-            for button in self.choice_buttons:
-                button.display_button_update(self.screen)
-
-            # Check for user inputs
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
-                elif event.type == pygame.MOUSEBUTTONDOWN:
-                    button_id = self.button_identifier(pygame.mouse.get_pos())
-                    if button_id == "Deadbook":
-                        self.display_deadbook()
+            self.core_event_handler()
 
             # Show the changes
             pygame.display.flip()
@@ -245,15 +259,7 @@ class GameInterface:
             for button in self.choice_buttons:
                 button.display_button_update(self.screen)
 
-            # Check for user inputs
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
-                elif event.type == pygame.MOUSEBUTTONDOWN:
-                    button_id = self.button_identifier(pygame.mouse.get_pos())
-                    if button_id == "Deadbook":
-                        self.display_deadbook()
+            self.core_event_handler()
 
             # Show the changes
             pygame.display.flip()
