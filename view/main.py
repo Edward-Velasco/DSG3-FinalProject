@@ -15,7 +15,8 @@ from modelView.Types import Option, NodeType
 from modelView.nodes.NodeCharacter import NodeCharacter
 
 class GameInterface:
-    def __init__(self):
+    def __init__(self, deadpool_instance):
+        self.deadpool_instance = deadpool_instance
         pygame.init()
 
         # Screen initialization
@@ -82,7 +83,7 @@ class GameInterface:
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     if cutscenes_iterator == 4:
                         # When the last intro image is reached, move to whatever is next
-                        return
+                        return self.deadpool_instance.start()
                     cutscenes_iterator += 1
 
             # Show the changes
