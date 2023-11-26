@@ -14,8 +14,8 @@ StoryTree = {
         'content': "- Face the death\n- Oh no, you are immortal",
         'options': ["ButtonText"],
         'children':[5],
-        'characterName': "unknown",
-        'characterPictureRoute': "/",
+        'characterName': "Esteban",
+        'characterPictureRoute': "view/assets/characters/ironman.png",
         'set': 0
     },
     3: {
@@ -24,7 +24,7 @@ StoryTree = {
         'options': ["Try again", "Fuck it"],
         'children': [4,5],
         'characterName': "Your head",
-        'characterPictureRoute': "/"
+        'characterPictureRoute': "view/assets/characters/ironman.png"
     },
     4: {
         'type': NodeType.SPECIAL,
