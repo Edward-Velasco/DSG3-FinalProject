@@ -22,7 +22,7 @@ class GameInterface:
         self.display_size = [1280, 720]
         self.screen = pygame.display.set_mode(self.display_size)
 
-        self.choice_buttons = None
+        self.choice_buttons = []
 
         # Executable customizations
         pygame.display.set_caption("Infinity Deadpool")
@@ -173,6 +173,11 @@ class GameInterface:
             pygame.display.flip()
 
 
+    def button_identifier(self, mouse_position):
+        for button_obj in self.choice_buttons:
+            if button_obj.rect.collidepoint(mouse_position):
+                return button_obj.id
+
     def display_story_node(self, story_node):
         self.set_background("view/assets/backgrounds/nodes_bg.png")
 
@@ -197,6 +202,10 @@ class GameInterface:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    button_id = self.button_identifier(pygame.mouse.get_pos())
+                    if button_id == "Deadbook":
+                        self.display_deadbook()
 
             # Show the changes
             pygame.display.flip()
@@ -240,6 +249,10 @@ class GameInterface:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    button_id = self.button_identifier(pygame.mouse.get_pos())
+                    if button_id == "Deadbook":
+                        self.display_deadbook()
 
             # Show the changes
             pygame.display.flip()
