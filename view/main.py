@@ -220,6 +220,9 @@ class GameInterface:
         while True:
             story_text_box.multiline_text_render(self.screen, 0)
 
+            for button in self.choice_buttons:
+                button.display_button_update(self.screen)
+
             self.core_event_handler()
 
             # Show the changes
