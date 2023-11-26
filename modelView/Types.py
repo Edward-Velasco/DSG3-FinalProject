@@ -5,6 +5,7 @@ class NodeType(Enum):
     DIALOGUE = "dialogue"
     FIGHT = "fight"
     SPECIAL = "special"
+    BLANK = "blank"
     UNDEFINED = "undefined"
 
 class Option(Enum):
