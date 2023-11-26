@@ -15,8 +15,7 @@ from modelView.Types import Option, NodeType
 from modelView.nodes.NodeCharacter import NodeCharacter
 
 class GameInterface:
-    def __init__(self, deadpool_instance):
-        self.deadpool_instance = deadpool_instance
+    def __init__(self):
         pygame.init()
 
         # Screen initialization
@@ -35,7 +34,8 @@ class GameInterface:
         self.screen.blit(new_background, (0, 0))
 
     # The function that loads the starting menu
-    def start_gui(self):
+    def start_gui(self, deadpool_instance):
+        self.deadpool_instance = deadpool_instance
         start_game_button = Button(
             background_image="view/assets/buttons/start_button.png",
             center_coordinates_pair=[
