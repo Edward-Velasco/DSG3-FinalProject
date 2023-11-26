@@ -1,6 +1,6 @@
 # Ejemplo de estructura de árbol
 
-from modelView.Types import NodeType
+from modelView.Types import NodeType, InfinityStones
 
 StoryTree = {
     1: {
