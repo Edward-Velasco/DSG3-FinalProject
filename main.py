@@ -1,15 +1,13 @@
-from modelView.GUI import GUI
 from modelView.Deadpool import Deadpool
-
-# disjointSets.build()
-gui = GUI()
-deadpool = Deadpool(gui)
-gui.start(deadpool)
-
+# from modelView.DisjointSets import DisjointSets
 from view.main import GameInterface
 from view.test import Root_test_tree, Dialogue_test_node, Fight_test_node
 
-GameScreen = GameInterface(deadpool)
-GameScreen.start_gui()
+sets = DisjointSets()
+sets.build()
+
+GameScreen = GameInterface()
+deadpool = Deadpool(GameScreen, sets)
+GameScreen.start_gui(deadpool)
 #GameScreen.display_story_node(Root_test_tree)
 #GameScreen.display_character_node(Fight_test_node)
