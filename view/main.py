@@ -99,7 +99,7 @@ class GameInterface:
             pygame.display.flip()
 
         # Function that displays the series of introductory cutscenes
-    def load_introduction(self, deadpool_instance):
+    def load_introduction(self):
         cutscenes_iterator = 1
 
         # Cycle to run per frame
