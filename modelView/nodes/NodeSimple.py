@@ -1,11 +1,11 @@
 from modelView.Types import NodeType
 
 class NodeSimple:
-    def __init__(self):
-        self.type = NodeType.UNDEFINED
-        self.content = ""
-        self.options = []
-        self.children = []
+    def __init__(self, type=NodeType.UNDEFINED, content="", options=[], children=[]):
+        self.type = type
+        self.content = content
+        self.options = options
+        self.children = children
 
     def getType(self):
         return self.type
@@ -24,3 +24,4 @@ class NodeSimple:
         self.options = options
     def setChildren(self, children):
         self.children = children
+
