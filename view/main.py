@@ -15,8 +15,10 @@ from modelView.Types import Option, NodeType
 from modelView.nodes.NodeCharacter import NodeCharacter
 
 class GameInterface:
-    def __init__(self):
+    def __init__(self, deadpool_instance = None):
         pygame.init()
+
+        self.deadpool_instance = deadpool_instance
 
         # Screen initialization
         self.display_size = [1280, 720]
@@ -27,6 +29,11 @@ class GameInterface:
         # Executable customizations
         pygame.display.set_caption("Infinity Deadpool")
         pygame.display.set_icon(pygame.image.load("view/assets/misc/logo.png"))
+
+
+    # Setter to define the deadpool instance
+    def set_deadpool(self, deadpool_class):
+        self.deadpool_instance = deadpool_class
 
     # Update the screen's background given an image route
     def set_background(self, image_route: str):
@@ -50,8 +57,8 @@ class GameInterface:
         # Execute the action related to that button
         if clicked_button == "Deadbook":
             self.display_deadbook()
-        elif clicked_button == "ABC":
-            pass
+        elif clicked_button == Option.LEFT or clicked_button == Option.RIGHT:
+            self.deadpool_instance.choose(clicked_button)
 
 
     # Deals with all events in each frame
@@ -65,8 +72,7 @@ class GameInterface:
 
 
     # The function that loads the starting menu
-    def start_gui(self, deadpool_instance):
-        self.deadpool_instance = deadpool_instance
+    def start_gui(self):
         start_game_button = Button(
             background_image="view/assets/buttons/start_button.png",
             center_coordinates_pair=[

@@ -10,7 +10,8 @@ sets = None
 
 GameScreen = GameInterface()
 deadpool = Deadpool(GameScreen, sets)
-GameScreen.start_gui(deadpool)
+GameScreen.set_deadpool(deadpool)
+GameScreen.start_gui()
 #GameScreen.display_story_node(Root_test_tree)
 #GameScreen.display_character_node(Fight_test_node)
 
