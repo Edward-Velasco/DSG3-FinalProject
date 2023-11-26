@@ -10,12 +10,6 @@ class TextContainer(ImageContainer):
         self.text_color = text_color
         self.font = font
 
-    def check_mouse_hover(self, mouse_position):
-        if self.rect.collidepoint(mouse_position):
-            return True
-        return False
-
-
     def character_label_render(self, screen):
         screen.blit(self.background, self.rect)
 

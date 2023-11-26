@@ -13,3 +13,8 @@ class ImageContainer:
     # Render the background image of the image
     def image_only_render(self, screen):
         screen.blit(self.background, self.rect)
+
+    def check_mouse_hover(self, mouse_position):
+        if self.rect.collidepoint(mouse_position):
+            return True
+        return False
