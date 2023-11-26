@@ -1,7 +1,7 @@
 from modelView.Types import InfinityStones
-from modelView.nodes.NodeCharacter import NodeCharacter
+from modelView.nodes.NodeSimple import NodeSimple
 
-class NodeGift(NodeCharacter) :
+class NodeGift(NodeSimple) :
     def __init__(self) :
         super().__init__()
         self.stone = None
