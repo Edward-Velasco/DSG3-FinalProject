@@ -15,7 +15,8 @@ StoryTree = {
         'options': ["ButtonText"],
         'children':[5],
         'characterName': "unknown",
-        'characterPictureRoute': "/"
+        'characterPictureRoute': "/",
+        'set': 0
     },
     3: {
         'type': NodeType.DIALOGUE,
@@ -37,6 +38,11 @@ StoryTree = {
         'content': "",
         'options': [],
         'children': []
+    },
+
+    # Independant nodes (victory or defeat nodes)
+    101: {
+        'type': NodeType.STORY
     }
 }
 
