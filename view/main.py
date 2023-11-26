@@ -149,6 +149,30 @@ class GameInterface:
 
         self.choice_buttons.append(deadbook_button)
 
+    def display_deadbook(self):
+        while True:
+            deadbook_bg = ImageContainer(
+                background_image="view/assets/backgrounds/deadbook_bg.png",
+                center_coordinates_pair=[self.display_size[0]/2, self.display_size[1]/2]
+            )
+
+            deadbook_bg.image_only_render(self.screen)
+
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    mouse_pos = pygame.mouse.get_pos()
+                    if not deadbook_bg.check_mouse_hover(mouse_pos):
+                        self.set_background("view/assets/backgrounds/nodes_bg.png")
+                        return
+
+
+            # Show the changes
+            pygame.display.flip()
+
+
     def display_story_node(self, story_node):
         self.set_background("view/assets/backgrounds/nodes_bg.png")
 
