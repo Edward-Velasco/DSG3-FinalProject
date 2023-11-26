@@ -12,6 +12,10 @@ class Option(Enum):
     LEFT = "left"
     RIGHT = "right"
 
+class Code(Enum):
+    DKTMU = "Deadpool Kills The Marvel Universe"
+    EXIT_0 = "0"
+
 class InfinityStones(Enum):
     GREEN = "green"
     BLUE = "blue"
