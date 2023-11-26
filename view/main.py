@@ -88,8 +88,8 @@ class GameInterface:
             # Show the changes
             pygame.display.flip()
 
-    def set_buttons(self, data_node, button_count: int):
-        if button_count == 2:
+    def set_buttons(self, data_node):
+        if data_node == NodeType.STORY or data_node == NodeType.DIALOGUE:
             left_choice_button = Button(
                 background_image="view/assets/buttons/choice_left_button.png",
                 center_coordinates_pair=[292+35+(434/2), 316+258+(85/2)],
@@ -99,6 +99,8 @@ class GameInterface:
                 text_hovering_color="Gray",
                 uuid=Option.LEFT
             )
+
+            print(data_node.getOptions())
 
             right_choice_button = Button(
                 background_image="view/assets/buttons/choice_right_button.png",
@@ -135,7 +137,7 @@ class GameInterface:
             font=get_font(30)
         )
 
-        self.set_buttons(story_node, 2)
+        self.set_buttons(story_node)
 
         while True:
             story_text_box.multiline_text_render(self.screen, 0)
@@ -176,10 +178,7 @@ class GameInterface:
             font=get_font(42)
         )
 
-        if char_node.type == NodeType.DIALOGUE:
-            self.set_buttons(char_node, 2)
-        else:
-            self.set_buttons(char_node, 1)
+        self.set_buttons(char_node)
 
         while True:
             story_text_box.multiline_text_render(self.screen, 31)
