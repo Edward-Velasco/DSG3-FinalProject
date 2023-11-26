@@ -28,14 +28,14 @@ class Deadpool:
         self.display()
 
     def choose(self, option):
-        if self.fightID != -1:
+        """if self.fightID != -1:
             if (option == Option.LEFT and self.next[0] != Code.DKTMU) or (option == Option.RIGHT and self.next[1] != Code.DKTMU):
                 self.fightID = -1
                 # self.response_received.set()
                 return self.choose(Option.LEFT)
             elif (option == Option.LEFT and self.next[0] == Code.DKTMU) or (option == Option.RIGHT and self.next[1] == Code.DKTMU):
                 # self.response_received.set()
-
+        """
         if option == Option.LEFT:
             self.location = self.next[0]
         else:
