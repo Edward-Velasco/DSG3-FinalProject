@@ -89,7 +89,7 @@ class GameInterface:
             pygame.display.flip()
 
     def set_buttons(self, data_node):
-        if data_node == NodeType.STORY or data_node == NodeType.DIALOGUE:
+        if data_node.type == NodeType.STORY or data_node.type == NodeType.DIALOGUE:
             left_choice_button = Button(
                 background_image="view/assets/buttons/choice_left_button.png",
                 center_coordinates_pair=[292+35+(434/2), 316+258+(85/2)],
@@ -99,8 +99,6 @@ class GameInterface:
                 text_hovering_color="Gray",
                 uuid=Option.LEFT
             )
-
-            print(data_node.getOptions())
 
             right_choice_button = Button(
                 background_image="view/assets/buttons/choice_right_button.png",
@@ -113,7 +111,7 @@ class GameInterface:
             )
 
             self.choice_buttons = [left_choice_button, right_choice_button]
-        else:
+        elif data_node.type == NodeType.FIGHT:
             choice_central_button = Button(
                 background_image="view/assets/buttons/choice_central_button.png",
                 center_coordinates_pair=[292+(964/2), 316+258+(85/2)],
@@ -125,6 +123,31 @@ class GameInterface:
             )
 
             self.choice_buttons = [choice_central_button]
+        else:
+            next_story_batch_button = Button(
+                background_image="view/assets/buttons/blank_next_button.png",
+                center_coordinates_pair=[1150, 630],
+                text_input=None,
+                text_color="White",
+                font=get_font(0),
+                text_hovering_color="White",
+                uuid="STORY_NEXT"
+            )
+
+            self.choice_buttons = [next_story_batch_button]
+
+        # Regardless of the type of node, add the deadbook
+        deadbook_button = Button(
+            background_image="view/assets/buttons/deadbook.png",
+            center_coordinates_pair=[1177,215],
+            text_input=None,
+            text_color="White",
+            font=get_font(0),
+            text_hovering_color="White",
+            uuid="Deadbook"
+        )
+
+        self.choice_buttons.append(deadbook_button)
 
     def display_story_node(self, story_node):
         self.set_background("view/assets/backgrounds/nodes_bg.png")
