@@ -14,8 +14,7 @@ StoryTree = {
         'content': "- Face the death\n- Oh no, you are immortal",
         'options': ["ButtonText"],
         'children':[5],
-        'characterName': "Esteban",
-        'characterPictureRoute': "view/assets/characters/ironman.png",
+        'character': 0,
         'set': 0
     },
     3: {
@@ -23,8 +22,7 @@ StoryTree = {
         'content': "Alright, you are getting therapy",
         'options': ["Try again", "Fuck it"],
         'children': [4,5],
-        'characterName': "Your head",
-        'characterPictureRoute': "view/assets/characters/ironman.png"
+        'character': 0
     },
     4: {
         'type': NodeType.SPECIAL,
@@ -33,6 +31,8 @@ StoryTree = {
         'children': [5,5],
         'stone': InfinityStones.GREEN
     },
+
+    # Used to tell the program the story is over
     5: {
         'type': NodeType.UNDEFINED,
         'content': "",
@@ -40,9 +40,12 @@ StoryTree = {
         'children': []
     },
 
-    # Independant nodes (victory or defeat nodes)
+    # Independant nodes (defeat nodes)
     101: {
-        'type': NodeType.STORY
+        'type': NodeType.BLANK,
+        'content': "Ironman made a hole in your liver, you are imposibilited to fight",
+        'options': [],
+        'children': [5]
     }
 }
 
