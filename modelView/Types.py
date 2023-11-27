@@ -9,12 +9,12 @@ class NodeType(Enum):
     UNDEFINED = "undefined"
 
 class Option(Enum):
-    LEFT = "left"
-    RIGHT = "right"
+    LEFT = 0
+    RIGHT = 1
 
 class Code(Enum):
     DKTMU = "Deadpool Kills The Marvel Universe"
-    EXIT_0 = "0"
+    EXIT_0 = 0
 
 class InfinityStones(Enum):
     GREEN = "green"
