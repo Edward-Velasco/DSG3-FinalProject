@@ -91,8 +91,7 @@ Una vez en la Torre Stark sacaste tu pistola y le apuntaste a Tony. No estabas d
         'content': '"Pero que malos modales, chico. ¿No querías una reunión para charlar? Baja el arma y hablémoslo"',
         'options': ['"Habla con la mano"', '"Eso no pasará"'],
         'children': [13,13],
-        'characterName': "Iron Man",
-        'characterPictureRoute': "view/assets/characters/ironman.png"
+        'character': 3
     },
     13: {
         'type': NodeType.FIGHT,
