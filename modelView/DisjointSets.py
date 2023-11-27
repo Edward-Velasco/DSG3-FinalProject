@@ -1,7 +1,6 @@
-import Q as queue
-import Character as CH
+from modelView.Q import Node as queue
+from modelView.Character import Character as CH
 from model.Characters import Characters as enemies
-
 
 
 class Disjoint_Set:
