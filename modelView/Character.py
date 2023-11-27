@@ -1,21 +1,14 @@
 class Character:
-    def __init__(self, name, figthContent, fightButtonText, picRoute, miniatureRoute, minDeadRoute):
+    def __init__(self, name, picRoute, miniatureRoute, minDeadRoute, figthContent):
         self.name = name
-        self.figthContent = figthContent
-        self.fightButtonText = fightButtonText
         self.picRoute = picRoute
         self.miniatureRoute = miniatureRoute
         self.minDeadRoute = minDeadRoute
+        self.figthContent = figthContent
         self.state = True
 
     def getName(self):
         return self.name 
-
-    def getFightContent(self):
-        return self.figthContent
-    
-    def getFightButtonText(self):
-        return self.fightButtonText
     
     def getPictureRoute(self):
         return self.picRoute
@@ -26,18 +19,15 @@ class Character:
     def getMiniatureDeadRoute(self):
         return self.minDeadRoute
     
+    def getFightContent(self):
+        return self.figthContent
+
     def getState(self):
         return self.state
 
     def setName(self, name):
         self.name = name
 
-    def setFightContent(self, fightContent):
-        self.figthContent = fightContent
-     
-    def setFightButtonText(self, fightButtonText):
-        self.fightButtonText = fightButtonText
-    
     def setPictureRoute(self, pictureRoute):
         self.picRoute = pictureRoute
     
@@ -47,11 +37,12 @@ class Character:
     def setMiniatureDeadRoute(self, miniatureDeadRoute):
         self.minDeadRoute = miniatureDeadRoute
     
+    def setFightContent(self, fightContent):
+        self.figthContent = fightContent
+     
     def setState(self, state):
         self.state = state
     
     def murder(self):
         self.setState(False)  
-    
-    
     
