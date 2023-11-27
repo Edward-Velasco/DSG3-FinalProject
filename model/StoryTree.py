@@ -34,6 +34,8 @@ Después de dos días de comer y beber a gusto decides que es momento de iniciar
         'options': ['le disparas a Negasonic T. W.', 'insultas a Yukio'],
         'children': [5, 5]
     },
+
+    # Used to tell the program the story is over
     5: {
         'type': NodeType.FIGHT,
         'content': '"¿¿Pero cuál es tu puto problema, anciano??"',

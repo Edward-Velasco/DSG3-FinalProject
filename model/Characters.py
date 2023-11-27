@@ -2,6 +2,7 @@
 # Cada valor debe ser un objeto de tipo Character!
 
 from modelView.Types import Code, NodeType
+from modelView.Character import Character
 from modelView.nodes.NodeSimple import NodeSimple
 
 Characters = {
