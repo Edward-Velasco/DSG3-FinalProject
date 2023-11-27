@@ -108,6 +108,7 @@ class Deadpool:
             for i in range(0, len(tmpChildren)):
                 value = tmpChildren[i] if tmpChildren[i] == Code.DKTMU else self.buildNode(tmpChildren[i])
                 self.next.insert(i, value)
+            self.sets_instance.removeCharacterAt(self.fightID)
         else:
             self.fightID = -1
             return Code.EXIT_0
