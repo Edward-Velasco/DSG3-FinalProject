@@ -60,5 +60,125 @@ Ponto comenzaron una pelea, Iron Man disparándote ráfagas de energía con sus 
 "¡Hulk aplasta mariquita!" gritó corriendo hacia ti. "Espera, ¿en serio acabas de llamarme mariquita?" soltaste una fuerte carcajada, pero Hulk no hablaba en broma y te aplastó contra el piso de un fuerte puño.''', ['burlarte de él', 'sacar tus katanas'], [Code.DKTMU, Code.DKTMU]),
         'state': True
     },
+    5: {
+        'name': "Doctor Strange",
+        'pictureRoute': "/",
+        'miniatureRoute': "/",
+        'miniatureDeadRoute': "/",
+        'fightContent': NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU]),
+        'state': True
+    },
+    6: {
+        'name': "Star-Lord",
+        'pictureRoute': "/",
+        'miniatureRoute': "/",
+        'miniatureDeadRoute': "/",
+        'fightContent': NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU]),
+        'state': True
+    },
+    7: {
+        'name': "Groot",
+        'pictureRoute': "/",
+        'miniatureRoute': "/",
+        'miniatureDeadRoute': "/",
+        'fightContent': NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU]),
+        'state': True
+    },
+    8: {
+        'name': "Rocket Raccoon",
+        'pictureRoute': "/",
+        'miniatureRoute': "/",
+        'miniatureDeadRoute': "/",
+        'fightContent': NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU]),
+        'state': True
+    },
+    9: {
+        'name': "Gamora",
+        'pictureRoute': "/",
+        'miniatureRoute': "/",
+        'miniatureDeadRoute': "/",
+        'fightContent': NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU]),
+        'state': True
+    },
+    10: {
+        'name': "Thanos",
+        'pictureRoute': "/",
+        'miniatureRoute': "/",
+        'miniatureDeadRoute': "/",
+        'fightContent': NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU]),
+        'state': True
+    },
+    11: {
+        'name': "Red Skull",
+        'pictureRoute': "/",
+        'miniatureRoute': "/",
+        'miniatureDeadRoute': "/",
+        'fightContent': NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU]),
+        'state': True
+    },
+    12: {
+        'name': "Thor",
+        'pictureRoute': "/",
+        'miniatureRoute': "/",
+        'miniatureDeadRoute': "/",
+        'fightContent': NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU]),
+        'state': True
+    },
+    13: {
+        'name': "Loki",
+        'pictureRoute': "/",
+        'miniatureRoute': "/",
+        'miniatureDeadRoute': "/",
+        'fightContent': NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU]),
+        'state': True
+    },
+    14: {
+        'name': "Black Panther",
+        'pictureRoute': "/",
+        'miniatureRoute': "/",
+        'miniatureDeadRoute': "/",
+        'fightContent': NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU]),
+        'state': True
+    },
+    15: {
+        'name': "Shuri",
+        'pictureRoute': "/",
+        'miniatureRoute': "/",
+        'miniatureDeadRoute': "/",
+        'fightContent': NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU]),
+        'state': True
+    },
+    16: {
+        'name': "Wanda",
+        'pictureRoute': "/",
+        'miniatureRoute': "/",
+        'miniatureDeadRoute': "/",
+        'fightContent': NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU]),
+        'state': True
+    },
+    17: {
+        'name': "Vision",
+        'pictureRoute': "/",
+        'miniatureRoute': "/",
+        'miniatureDeadRoute': "/",
+        'fightContent': NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU]),
+        'state': True
+    },
+    18: {
+        'name': "Black Widow",
+        'pictureRoute': "/",
+        'miniatureRoute': "/",
+        'miniatureDeadRoute': "/",
+        'fightContent': NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU]),
+        'state': True
+    },
+    19: {
+        'name': "Hawkeye",
+        'pictureRoute': "/",
+        'miniatureRoute': "/",
+        'miniatureDeadRoute': "/",
+        'fightContent': NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU]),
+        'state': True
+    }
 }
 
