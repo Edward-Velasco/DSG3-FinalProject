@@ -13,8 +13,8 @@ class Node:
         
     def dequeue(self):
         if (len(self.body)!=0):
-            self.body.pop(0)
-            return 0
+            return self.body.pop(0)
+            
         else:
             print('queue is empty')
             return -1

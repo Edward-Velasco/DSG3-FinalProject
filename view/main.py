@@ -161,7 +161,7 @@ class GameInterface:
             )
 
             self.choice_buttons = [choice_central_button]
-        else:
+        elif data_node.type == NodeType.BLANK:
             next_story_batch_button = Button(
                 background_image="view/assets/buttons/blank_next_button.png",
                 center_coordinates_pair=[1150, 630],
@@ -169,7 +169,7 @@ class GameInterface:
                 text_color="White",
                 font=get_font(0),
                 text_hovering_color="White",
-                uuid="STORY_NEXT"
+                uuid=Option.LEFT
             )
 
             self.choice_buttons = [next_story_batch_button]
