@@ -47,12 +47,8 @@ class Disjoint_Set:
             return -1
 
     def removeCharacterAt(self, index):
-        killedCharacter = None
         if index < len(self.sets):
-            killedCharacter = self.sets[index].dequeue()
-        for i in range(len(Characters)-1):
-            if killedCharacter.getName() == Characters[i].getName():
-                Characters[i].murder()
+            self.sets[index].dequeue()
 
     def isSetEmpty(self, index):
         if index < len(self.sets):
