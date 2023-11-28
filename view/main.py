@@ -102,7 +102,8 @@ class GameInterface:
                     sys.exit()
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     if start_game_button.check_mouse_hover(pygame.mouse.get_pos()):
-                        self.load_introduction()
+                        self.deadpool_instance.start()
+                        #self.load_introduction()
 
             # Show the changes
             pygame.display.flip()
@@ -191,6 +192,20 @@ class GameInterface:
         self.choice_buttons.append(deadbook_button)
 
     def display_deadbook(self):
+        from model.Characters import Characters
+
+        char_list = []
+        for character_iterator in Characters:
+            Characters[character_iterator].setState(False)
+
+            if Characters[character_iterator].state:
+                char_list.append(pygame.image.load(Characters[character_iterator].miniatureRoute))
+            else:
+                char_list.append(pygame.image.load(Characters[character_iterator].minDeadRoute))
+
+
+        char_image = pygame.image.load(Characters[19].miniatureRoute)
+
         while True:
             deadbook_bg = ImageContainer(
                 background_image="view/assets/backgrounds/deadbook_bg.png",
@@ -198,6 +213,10 @@ class GameInterface:
             )
 
             deadbook_bg.image_only_render(self.screen)
+
+            # Render all characters
+            for character_it in range(len(char_list)):
+                self.screen.blit(char_list[character_it], Characters[character_it].coords)
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
