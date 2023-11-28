@@ -7,12 +7,15 @@ from view.classes.TextContainer import TextContainer
 from view.classes.OptionBox import OptionBox
 from view.classes.ImageContainer import ImageContainer
 
-# Import utility functions
-from view.utils import get_font
-
 # Import backend related stuff
 from modelView.Types import Option, NodeType
 from modelView.nodes.NodeCharacter import NodeCharacter
+
+
+# Return the loaded pygame font for a given size
+def get_font(font_size):
+    return pygame.font.Font(f"view/assets/fonts/Webcomic.ttf", font_size)
+
 
 class GameInterface:
     def __init__(self, deadpool_instance = None):
