@@ -113,7 +113,7 @@ class GameInterface:
 
         # Cycle to run per frame
         while True:
-            self.set_background(f"view/assets/backgrounds/introduction/cutscene_{cutscenes_iterator}.png")
+            self.set_background(f"view/assets/backgrounds/introduction/intro-0{cutscenes_iterator}.png")
 
             # Check for user inputs
             for event in pygame.event.get():
@@ -121,7 +121,7 @@ class GameInterface:
                     pygame.quit()
                     sys.exit()
                 elif event.type == pygame.MOUSEBUTTONDOWN:
-                    if cutscenes_iterator == 4:
+                    if cutscenes_iterator == 8:
                         # When the last intro image is reached, move to whatever is next
                         return self.deadpool_instance.start()
                     cutscenes_iterator += 1
