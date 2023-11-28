@@ -16,6 +16,14 @@ from modelView.nodes.NodeCharacter import NodeCharacter
 def get_font(font_size):
     return pygame.font.Font(f"view/assets/fonts/Webcomic.ttf", font_size)
 
+# Keep the text of a container within the image's boundaries
+def get_font_size(string, standard_size, max_len):
+    size = standard_size
+    text_lem = len(string)
+    if text_lem>max_len:
+        size = int((max_len*standard_size)/len(string))
+    return size
+
 
 class GameInterface:
     def __init__(self, deadpool_instance = None):
@@ -84,7 +92,7 @@ class GameInterface:
             ],
             text_input=None,
             text_color="White",
-            font=get_font(50),
+            font=get_font(0),
             text_hovering_color="White",
             uuid="Start_Button"
         )
@@ -136,7 +144,7 @@ class GameInterface:
                 center_coordinates_pair=[292+35+(434/2), 316+258+(85/2)],
                 text_input=data_node.getOptions()[0],
                 text_color="White",
-                font=get_font(50),
+                font=get_font(get_font_size(data_node.getOptions()[0], 50, 22)),
                 text_hovering_color="Gray",
                 uuid=Option.LEFT
             )
@@ -146,7 +154,7 @@ class GameInterface:
                 center_coordinates_pair=[292+490+(434/2), 316+258+(85/2)],
                 text_input=data_node.getOptions()[1],
                 text_color="White",
-                font=get_font(50),
+                font=get_font(get_font_size(data_node.getOptions()[1], 50, 22)),
                 text_hovering_color="Gray",
                 uuid=Option.RIGHT
             )
@@ -158,7 +166,7 @@ class GameInterface:
                 center_coordinates_pair=[292+(964/2), 316+258+(85/2)],
                 text_input=data_node.getOptions()[0],
                 text_color="White",
-                font=get_font(50),
+                font=get_font(get_font_size(data_node.getOptions()[0], 50, 22)),
                 text_hovering_color="Gray",
                 uuid=Option.LEFT
             )
