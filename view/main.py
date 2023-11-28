@@ -195,15 +195,11 @@ class GameInterface:
 
         char_list = []
         for character_iterator in Characters:
-            Characters[character_iterator].setState(False)
-
             if Characters[character_iterator].state:
                 char_list.append(pygame.image.load(Characters[character_iterator].miniatureRoute))
             else:
                 char_list.append(pygame.image.load(Characters[character_iterator].minDeadRoute))
 
-
-        char_image = pygame.image.load(Characters[19].miniatureRoute)
 
         while True:
             deadbook_bg = ImageContainer(
