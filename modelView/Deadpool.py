@@ -30,6 +30,8 @@ class Deadpool:
         self.display()
 
     def choose(self, option):
+        if self.location.getType() == NodeType.UNDEFINED:
+            return
         if self.location.getType() == NodeType.FIGHT:
             self.fightSequence(option)
             self.display()
@@ -59,7 +61,7 @@ class Deadpool:
 
     def display(self):
         if self.location.getType() == NodeType.UNDEFINED:
-            self.gui_instance.display_final_node() # Better definition pending
+            self.gui_instance.display_final_node(self.location) # Better definition pending
         elif self.location.getType() == NodeType.STORY or self.location.getType() == NodeType.BLANK:
             self.gui_instance.display_story_node(self.location)
         elif self.location.getType() == NodeType.DIALOGUE or self.location.getType() == NodeType.FIGHT:
