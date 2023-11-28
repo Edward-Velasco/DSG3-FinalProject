@@ -35,37 +35,37 @@ class Deadpool:
             self.display()
             return
         if self.fightID != -1:
-            self.next.pop(0)
-            self.next.pop(0)
             if self.next[option.value] == Code.DKTMU:
+                self.next.pop(0)
+                self.next.pop(0)
                 if self.fightSequence(option) == Code.EXIT_0:
-                    self.location = self.next[option.value]
-                self.display()
+                    self.location = self.next[0]
+                    self.aux()
             else:
                 self.fightID = -1
                 self.location = self.next[option.value]
-                self.display()
+                self.aux()
+            self.display()
             return
-        # if option == Option.LEFT:
-        #     self.location = self.next[0]
-        # else:
-        #     self.location = self.next[1]
         self.location = self.next[option.value]
-        childrenRef = self.location.getChildren()
+        self.aux()
+        self.display()
+
+    def aux(self):
         self.next.clear()
+        childrenRef = self.location.getChildren()
         for i in range(0, len(childrenRef)):
             self.next.append(self.buildNode(childrenRef[i]))
-        self.display()
 
     def display(self):
         if self.location.getType() == NodeType.UNDEFINED:
-            print("Story is over")
+            self.gui_instance.display_final_node() # Better definition pending
         elif self.location.getType() == NodeType.STORY or self.location.getType() == NodeType.BLANK:
             self.gui_instance.display_story_node(self.location)
         elif self.location.getType() == NodeType.DIALOGUE or self.location.getType() == NodeType.FIGHT:
             self.gui_instance.display_character_node(self.location)
         elif self.location.getType() == NodeType.SPECIAL:
-            self.gui_instance.display_story_node(self.location) # displayFight(self.location) ?
+            self.gui_instance.display_story_node(self.location)
             self.gui_instance.displayNewStone(self.location.getStone())
 
     def buildNode(self, nodeID):
@@ -93,7 +93,7 @@ class Deadpool:
 
     def fightSequence(self, option):
         if self.fightID == -1:
-            self.fightID = self.battleKeys[option.value]
+            self.fightID = StoryTree[self.battleKeys[option.value]]['set']
             self.battleKeys.clear()
         if not self.sets_instance.isSetEmpty(self.fightID):
             tmpCharacter = self.sets_instance.getCharacterAt(self.fightID)
@@ -102,6 +102,7 @@ class Deadpool:
             self.location.setType(NodeType.DIALOGUE)
             self.location.setContent(tmpNode.getContent())
             self.location.setOptions(tmpNode.getOptions())
+            self.location.setChildren(tmpNode.getChildren())
             self.location.setCharacterName(tmpCharacter.getName())
             self.location.setCharacterPictureRoute(tmpCharacter.getPictureRoute())
             tmpChildren = tmpNode.getChildren()
@@ -113,7 +114,7 @@ class Deadpool:
             self.fightID = -1
             return Code.EXIT_0
 
-    def markAsDead(self, characterID):
-        self.gui_instance.updateDeadbookLinks(characterID, Characters[characterID].getMiniatureDeadRoute())
-        return None
-
+    # def markAsDead(self, characterID):
+    #     self.gui_instance.updateDeadbookLinks(characterID, Characters[characterID].getMiniatureDeadRoute())
+    #     return None
+    #
