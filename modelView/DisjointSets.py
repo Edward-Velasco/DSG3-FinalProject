@@ -1,6 +1,7 @@
 from modelView.Character import Character
 import modelView.Q as queue
 from model.Characters import Characters
+from modelView.Types import ConsoleColor
 
 
 
@@ -46,16 +47,12 @@ class Disjoint_Set:
             return -1
 
     def removeCharacterAt(self, index):
-        # killedCharacter = None
-        # id = -1
+        killedCharacter = None
         if index < len(self.sets):
             killedCharacter = self.sets[index].dequeue()
-        # for i in range(len(Characters)-1):
-        #     if killedCharacter.getName() == Characters[i].getName():
-                # id = i
-
-        # if id != -1:
-        #     self.deadPoolInstance.markAsDead(id)
+        for i in range(len(Characters)-1):
+            if killedCharacter.getName() == Characters[i].getName():
+                Characters[i].murder()
 
     def isSetEmpty(self, index):
         if index < len(self.sets):
