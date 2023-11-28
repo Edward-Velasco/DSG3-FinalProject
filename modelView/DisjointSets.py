@@ -1,5 +1,5 @@
-import Q as queue
-import Character as CH
+from modelView.Q import Node as queue
+from modelView.Character import Character as CH
 from model.Characters import Characters as enemies
 
 
@@ -16,7 +16,7 @@ class Disjoint_Set:
     def buildSet(self, characterIDs):
         character_queue = queue.Node(4)
         for id in characterIDs:
-            character_queue.enqueue(enemies.Characters[id]) #borrar .get 
+            character_queue.enqueue(enemies.Characters[id]) #borrar .get
         self.sets.append(character_queue)
 
     def getCharacterAt(self, index):
@@ -36,7 +36,7 @@ class Disjoint_Set:
         else:
             print('position does not exist in list')
             return -1
-        
+
     def removeCharacterAt(self, index):
         if index < len(self.sets):
             killedCharacter = self.sets[index].dequeue()
@@ -45,12 +45,12 @@ class Disjoint_Set:
                 id = i
 
         self.deadPoolInstance.markAsDead(id)
-            
+
     def isSetEmpty(self, index):
         if index < len(self.sets):
             return self.sets[index].is_empty()
-        
+
     def setDeadPool(self, deadPoolInstance):
         self.deadPoolInstance = deadPoolInstance
-        
+
 
