@@ -5,7 +5,7 @@ from modelView.Types import NodeType, InfinityStones
 StoryTree = {
     1: {
         'type': NodeType.BLANK,
-        'content': '''"Ah... ¿o sea que tu eres el idiota que va a estar jugando mi videojuego? Esperaba a alguien más guapo, pero como sea, supongo que este videojuego tuvo tanto éxito que llegó a las manos de cualquiera.
+        'content': '''"Ah... o sea que tu eres el idiota que va a estar jugando mi videojuego? Esperaba a alguien más guapo, pero como sea, supongo que este videojuego tuvo tanto éxito que llegó a las manos de cualquiera.
 
 Empecemos con la acción. Supongo que te estás preguntando cuál es el plan tan asombroso que mencioné. Bueno, es muy sencillo: últimamente mientras cago he estado leyendo los cómics de payasos coloridos de esta empresa llamada "Marvel" y me llegó la inspiración de repente..."''',
         'children': [2]
@@ -19,7 +19,7 @@ Así que no, este no es un videojuego sobre un héroe lameculos con calzones de 
     },
     3: {
         'type': NodeType.BLANK,
-        'content': '''"Entonces, ¿qué dices? ¿Listo para patear los supertraseros de algunos superidiotas?
+        'content': '''"Entonces, qué dices? Listo para patear los supertraseros de algunos superidiotas?
 
 Comencemos por Coloso, el grandulón que está a punto de entrar por esa puerta."''',
         'children': [4]
@@ -38,7 +38,7 @@ Después de dos días de comer y beber a gusto decides que es momento de iniciar
     # Used to tell the program the story is over
     5: {
         'type': NodeType.FIGHT,
-        'content': '"¿¿Pero cuál es tu puto problema, anciano??"',
+        'content': '"Pero cuál es tu puto problema, anciano??"',
         'options': ['Iniciar una pelea'],
         'children':[9],
         'character': 0,
@@ -88,14 +88,14 @@ Una vez en la Torre Stark sacaste tu pistola y le apuntaste a Tony. No estabas d
     },
     12: {
         'type': NodeType.DIALOGUE,
-        'content': '"Pero que malos modales, chico. ¿No querías una reunión para charlar? Baja el arma y hablémoslo"',
+        'content': '"Pero que malos modales, chico. No querías una reunión para charlar? Baja el arma y hablémoslo"',
         'options': ['"Habla con la mano"', '"Eso no pasará"'],
         'children': [13,13],
         'character': 3
     },
     13: {
         'type': NodeType.FIGHT,
-        'content': '"¿Qué es lo que quieres, Deadpool?"',
+        'content': '"Qué es lo que quieres, Deadpool?"',
         'options': ['"Tu cabeza"'],
         'children':[14],
         'character': 3,
