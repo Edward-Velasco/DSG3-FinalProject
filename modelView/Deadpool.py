@@ -1,6 +1,6 @@
 from model.StoryTree import StoryTree
 from model.Characters import Characters
-from modelView.Types import NodeType, Option, Code, InfinityStones as St
+from modelView.Types import ConsoleColor, NodeType, Option, Code, InfinityStones as St
 from modelView.nodes.NodeSimple import NodeSimple
 from modelView.nodes.NodeCharacter import NodeCharacter
 from modelView.nodes.NodeGift import NodeGift
@@ -13,6 +13,7 @@ class Deadpool:
         self.next = []
         self.fightID = -1
         self.battleKeys = []
+        self.currentBitch = None
         self.blessings = {
             St.ORANGE: { "obtained": False, "image_path": "view/assets/gemstones/gem_orange.png", "coords": (180,100) },
             St.GREEN: { "obtained": False, "image_path": "view/assets/gemstones/gem_green.png", "coords": (175,200) },
@@ -38,6 +39,7 @@ class Deadpool:
             return
         if self.fightID != -1:
             if self.next[option.value] == Code.DKTMU:
+                self.currentBitch.murder()
                 self.next.pop(0)
                 self.next.pop(0)
                 if self.fightSequence(option) == Code.EXIT_0:
@@ -99,6 +101,7 @@ class Deadpool:
             self.battleKeys.clear()
         if not self.sets_instance.isSetEmpty(self.fightID):
             tmpCharacter = self.sets_instance.getCharacterAt(self.fightID)
+            self.currentBitch = tmpCharacter
             tmpNode = tmpCharacter.getFightContent()
             self.location = NodeCharacter()
             self.location.setType(NodeType.DIALOGUE)
