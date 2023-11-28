@@ -102,8 +102,7 @@ class GameInterface:
                     sys.exit()
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     if start_game_button.check_mouse_hover(pygame.mouse.get_pos()):
-                        self.deadpool_instance.start()
-                        #self.load_introduction()
+                        self.load_introduction()
 
             # Show the changes
             pygame.display.flip()
