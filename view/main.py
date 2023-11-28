@@ -4,8 +4,8 @@ import sys
 # Import the visual classes
 from view.classes.Button import Button
 from view.classes.TextContainer import TextContainer
-from view.classes.OptionBox import OptionBox
 from view.classes.ImageContainer import ImageContainer
+from view.classes.GemBar import GemBar
 
 # Import backend related stuff
 from modelView.Types import Option, NodeType
@@ -36,6 +36,11 @@ class GameInterface:
         self.screen = pygame.display.set_mode(self.display_size)
 
         self.choice_buttons = []
+
+        self.gem_bar = GemBar(
+            background_image=("view/assets/gemstones/gem_bar.png"),
+            center_coordinates_pair=((self.display_size[0]/10)+80, (self.display_size[1]/2)-1)
+        )
 
         # Executable customizations
         pygame.display.set_caption("Infinity Deadpool")
@@ -138,7 +143,7 @@ class GameInterface:
             pygame.display.flip()
 
     def set_buttons(self, data_node):
-        if data_node.type == NodeType.STORY or data_node.type == NodeType.DIALOGUE:
+        if data_node.type == NodeType.STORY or data_node.type == NodeType.DIALOGUE or data_node.type == NodeType.SPECIAL:
             left_choice_button = Button(
                 background_image="view/assets/buttons/choice_left_button.png",
                 center_coordinates_pair=[292+35+(434/2), 316+258+(85/2)],
@@ -248,12 +253,18 @@ class GameInterface:
 
         self.set_buttons(story_node)
 
+        # Gems bar stuff :D
+        self.gem_bar.load_assets(self.deadpool_instance.blessings)
+        if story_node.type is NodeType.SPECIAL:
+            self.gem_bar.gemstones_add(self.deadpool_instance.blessings, story_node.stone)
+
         while True:
             story_text_box.multiline_text_render(self.screen, 0)
 
             for button in self.choice_buttons:
                 button.display_button_update(self.screen)
 
+            self.gem_bar.graph_gembar(self.screen)
             self.core_event_handler()
 
             # Show the changes
@@ -285,6 +296,11 @@ class GameInterface:
 
         self.set_buttons(char_node)
 
+        # Gems bar stuff :D
+        self.gem_bar.load_assets(self.deadpool_instance.blessings)
+        if char_node.type is NodeType.SPECIAL:
+            self.gem_bar.gemstones_add(self.deadpool_instance.blessings, char_node.stone)
+
         while True:
             story_text_box.multiline_text_render(self.screen, 31)
             character_label.character_label_render(self.screen)
@@ -293,6 +309,7 @@ class GameInterface:
             for button in self.choice_buttons:
                 button.display_button_update(self.screen)
 
+            self.gem_bar.graph_gembar(self.screen)
             self.core_event_handler()
 
             # Show the changes
