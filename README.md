@@ -4,6 +4,7 @@
 Executing this project can be easily done by running it using Python:
 ```
 python.exe -m pip install -U pygame --user
+python.exe -m pip install -U unicode --user
 python.exe .\main.py
 ```
 

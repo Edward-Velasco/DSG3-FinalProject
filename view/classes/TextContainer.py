@@ -1,4 +1,5 @@
 from .ImageContainer import ImageContainer
+from unidecode import unidecode
 
 
 class TextContainer(ImageContainer):
@@ -23,8 +24,10 @@ class TextContainer(ImageContainer):
 
         words_per_line = []
 
+        accent_free = unidecode(self.text_input, "utf-8")
+
         # Separate the text_input by lines
-        for text_line in self.text_input.splitlines():
+        for text_line in accent_free.splitlines():
             words_per_line.append(text_line.split(' '))
 
         # Define the boundaries for the text
