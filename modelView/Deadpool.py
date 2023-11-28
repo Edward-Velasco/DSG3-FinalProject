@@ -14,12 +14,12 @@ class Deadpool:
         self.fightID = -1
         self.battleKeys = []
         self.blessings = {
-            St.GREEN: False,
-            St.BLUE: False,
-            St.PURPLE: False,
-            St.YELLOW: False,
-            St.RED: False,
-            St.ORANGE: False
+            St.ORANGE: { "obtained": False, "image_path": "view/assets/gemstones/gem_orange.png", "coords": (180,100) },
+            St.GREEN: { "obtained": False, "image_path": "view/assets/gemstones/gem_green.png", "coords": (175,200) },
+            St.PURPLE: { "obtained": False, "image_path": "view/assets/gemstones/gem_purple.png", "coords": (175,285) },
+            St.RED: { "obtained": False, "image_path": "view/assets/gemstones/gem_red.png", "coords": (170,375) },
+            St.YELLOW: { "obtained": False, "image_path": "view/assets/gemstones/gem_yellow.png", "coords": (175,490) },
+            St.BLUE: { "obtained": False, "image_path": "view/assets/gemstones/gem_blue.png", "coords": (175,580) }
         }
 
     def start(self):
