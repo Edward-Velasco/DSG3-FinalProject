@@ -122,14 +122,18 @@ Disparaste varias veces, pero las balas parecían no hacerle ningún efecto a Re
                  "view/assets/characters/mini_alive/thor-vivo.png",
                  "view/assets/characters/mini_dead/thor-muerto.png",
                  (550,285),
-                 NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU])
+                 NodeSimple(NodeType.STORY, '''"Una pelea, eso es lo que quiero. Una buena pelea en serio" explicaste, sacando tus katanas. "Con que Dios del Trueno, no es así? Muéstrame lo que tienes".
+
+Thor lanzó tu martillo a tu entrepierna y caíste de rodillas del dolor.''', ['"Auch! Tacho"', '"No se vale!"'], [Code.DKTMU, Code.DKTMU])
                  ),
     13: Character("Loki",
                  "view/assets/characters/nodes/loki.png",
                  "view/assets/characters/mini_alive/loki-vivo.png",
                  "view/assets/characters/mini_dead/loki-muerto.png",
                  (440,420),
-                 NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU])
+                 NodeSimple(NodeType.STORY, '''Te tomó unos minutos recuperarte, pero Thor te esperó como un caballero. Luego le cortaste la cabeza.
+
+"Pero qué demonios??" gritó Loki, quien no alcanzó a reaccionar antes para evitar su muerte.''', ['"Toma eso!"', '"Y sin gemas!"'], [Code.DKTMU, Code.DKTMU])
                  ),
     14: Character("Black Panther",
                  "view/assets/characters/nodes/black.png",

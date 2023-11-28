@@ -229,8 +229,8 @@ Sin duda te acercas a saludar muy amablemente, es decir, con tu arma le apuntas 
         'type': NodeType.FIGHT,
         'content': '''"Ah sí? Pues eso lo veremos"''',
         'options': ['Pelear'],
-        'children':[14],
-        'character': 34,
+        'children':[34],
+        'character': 6,
         'set': 3
     },
     34: {
@@ -393,11 +393,13 @@ Así que la gema es tuya".''',
         'character': 11
     },
     57: {
-        'type': NodeType.BLANK,
+        'type': NodeType.SPECIAL,
         'content': '''Viste una luz azul cubrir toda la montaña y luego, sin darte cuenta cómo habías llegado ahí, te encontrabas flotando en un lago, sosteniendo la Gema del Alma en tus manos.
 
 Saltaste de la alegría y decidiste volver a teletransportarte a la cima de la montaña para agradecerle a Red Skull, es decir pegarle un tiro en el cráneo... Literalmente en el cráneo.''',
-        'children': [58]
+        'options': ['"Hola bebé"','"Regresé"'],
+        'children': [58,58],
+        'stone': InfinityStones.ORANGE
     },
     58: {
         'type': NodeType.FIGHT,
@@ -419,7 +421,7 @@ Entonces viste a Black Widow y a Hawkeye, que venían subiendo la montaña de Vo
         'content': '''Usaste la Gema del Poder nuevamente y convertiste a Red Skull en polvo instantáneamente. Esa gemita morada se estaba convirtiendo en tu mejor amiga.
 
 Sin más que hacer decidiste viajar a otro lugar de la galaxia, un lugar donde sí hubieran buenas peleas. El destino que elegiste fue Asgard, el hogar de los dioses griegos. O eran noruegos? Como sea, de seguro ellos sí saben pelear de verdad.''',
-        'children': [101]
+        'children': [65]
     },
     61: {
         'type': NodeType.DIALOGUE,
@@ -450,6 +452,75 @@ No hay nada como el hogar. En especial después de haber asesinado a tantas pers
 Ya es hora de descansar y quitarte esa máscara que llevabas puesta todo el día.''',
         'children': [101]
     },
+    65: {
+        'type': NodeType.DIALOGUE,
+        'content': '''"¿Quién eres?"''',
+        'options': ['"Yo"', '"Deadpool"'],
+        'children': [66,66],
+        'character': 12
+    },
+    66: {
+        'type': NodeType.DIALOGUE,
+        'content': '''"Genial! Otro loco que termina varado en Asgard! Ves, hermano?? Por eso digo que deberíamos ser más cuidadosos con el ingreso de extrangeros"''',
+        'options': ['"Sigo aquí"', '"No pues perdón?"'],
+        'children': [67,67],
+        'character': 13
+    },
+    67: {
+        'type': NodeType.FIGHT,
+        'content': '''"Qué es lo que quieres?"''',
+        'options': ['Una pelea'],
+        'children':[68],
+        'character': 12,
+        'set': 6
+    },
+    68: {
+        'type': NodeType.BLANK,
+        'content': '''Loki se acercó a ti dispuesto a asesinarte, pero ya estabas algo cansado así que simplemente usaste de nuevo la Gema del Poder en tu bolsillo y lo asesinaste rápidamente.''',
+        'children': [70]
+    },
+    70: {
+        'type': NodeType.SPECIAL,
+        'content': '''Caminaste por Asgard a tu antojo y en el sótano te encontraste con una gema roja, así que la llevaste contigo ya que al parecer ahora coleccionabas piedras.
+
+"Hmn, ¿ahora a dónde debería ir? Que sea un lugar divertido... y al que no haya ido aún... Ah, ya sé, a Wakanda! Por favor, jugador, por favor, por favor vamos a Wakanda".''',
+        'options': ['Está bien','Nop'],
+        'children': [69,74],
+        'stone': InfinityStones.RED
+    },
+    69: {
+        'type': NodeType.BLANK,
+        'content': '''Te teletransportaste a Wakanda y en un pasillo de la fortaleza real viste a Black Panther pasar, así que te acercaste a saludar.
+
+"Black Panther! No puede ser. Hola! Soy un gran admirador tuyo" dijiste alegre.''',
+        'children': [71]
+    },
+    71: {
+        'type': NodeType.DIALOGUE,
+        'content': '''"Hola... No sé quién eres ni qué haces aquí pero tengo una reunión muy importante justo ahora"''',
+        'options': ['"Entiendo"', '"Ainnn"'],
+        'children': [72,72],
+        'character': 14
+    },
+    72: {
+        'type': NodeType.DIALOGUE,
+        'content': '''"Vamos, hermano. Wanda y Visión ya nos están esperando en el laboratorio"''',
+        'options': ['"Los sigo"', '"Entonces vamos"'],
+        'children': [73,73],
+        'character': 15
+    },
+    73: {
+        'type': NodeType.BLANK,
+        'content': '''Ahora que tu misión ha terminado ya puedes descansar y quitarte la máscara que llevabas puesta todo el día.''',
+        'children': [101]
+    },
+    77: {
+        'type': NodeType.STORY,
+        'content': '''"Pero por favoooor, por favorcito. Vamos a Wakanda"''',
+        'options': ['Agt, ok', 'Está bien!'],
+        'children': [69, 69]
+    },
+
 
 
 
