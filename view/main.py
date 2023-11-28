@@ -235,7 +235,7 @@ class GameInterface:
             center_coordinates_pair=[292+(964/2), 316+(373/2)],
             text_input=story_node.getContent(),
             text_color="Black",
-            font=get_font(30)
+            font=get_font(25)
         )
 
         self.set_buttons(story_node)
@@ -259,7 +259,7 @@ class GameInterface:
             center_coordinates_pair=[292+(964/2), 316+(373/2)],
             text_input=char_node.getContent(),
             text_color="Black",
-            font=get_font(30)
+            font=get_font(25)
         )
 
         character_icon = ImageContainer(
@@ -284,6 +284,21 @@ class GameInterface:
 
             for button in self.choice_buttons:
                 button.display_button_update(self.screen)
+
+            self.core_event_handler()
+
+            # Show the changes
+            pygame.display.flip()
+
+    def display_final_node(self, final_node):
+
+        final_box = ImageContainer(
+            background_image="view/assets/backgrounds/final_bg.png",
+            center_coordinates_pair=[292+(964/2), 316+(373/2)],
+        )
+
+        while True:
+            final_box.image_only_render(self.screen)
 
             self.core_event_handler()
 
