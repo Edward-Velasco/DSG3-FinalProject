@@ -88,8 +88,8 @@ Una vez en la Torre Stark sacaste tu pistola y le apuntaste a Tony. No estabas d
     },
     12: {
         'type': NodeType.DIALOGUE,
-        'content': '"Pero que malos modales, chico. No querías una reunión para charlar? Baja el arma y hablémoslo"',
-        'options': ['"Habla con la mano"', '"Eso no pasará"'],
+        'content': '''x''',
+        'options': ['c', 'c'],
         'children': [13,13],
         'character': 3
     },
@@ -118,21 +118,342 @@ Después de unos cuantos movimientos rápidos, pero que fueron mostrados en cám
         'content': '''Rompes todo el laboratorio y tomas la gema azul con tus manos. Al verla de cerca te das cuenta de que es justo lo que pensaste: se trata de la famosa Gema del Espacio, de la que habías leído antes en tus cómics de Marvel.
 
 Usando su poder decides teletransportarte a''',
-        'options': ['el Sanctum Sanctorum','Wakanda'],
+        'options': ['el Sanctum Sanctorum','una galaxia lejana'],
         'children': [17,18],
-        'stone': InfinityStones.GREEN
+        'stone': InfinityStones.BLUE
     },
     17: {
         'type': NodeType.BLANK,
-        'content': '''Te teletransportas a el Sanctum Sanctorum.''',
+        'content': '''Te teletransportas a el Sanctum Sanctorum para buscar al maguito de capa que habías visto en tus cómics y rápidamente lo encuentras en la biblioteca leyendo un librito misterioso.''',
         'children': [19]
     },
     18: {
         'type': NodeType.BLANK,
-        'content': '''Te teletransportas a Wakanda.''',
-        'children': [19]
+        'content': '''Te teletransportas a una galaxia lejana aleatoria. De inmediato le preguntas a un nativo de la zona dónde te encuentras y te responde que estás en el planeta Morag.
+
+Caminando por allí mientras buscas un bar ves a los Guardianes de la Galaxia protegiendo el Orbe. Sin dudarlo te acercas a saludar muy amablemente, es decir, con tu arma le apuntas en la cabeza a quien parece ser el líder.''',
+        'children': [29]
     },
     19: {
+        'type': NodeType.DIALOGUE,
+        'content': '''"Sabía que vendrías, Deadpool"''',
+        'options': ['"Ah sí?"', 'Reír'],
+        'children': [13,13],
+        'character': 5
+    },
+    20: {
+        'type': NodeType.BLANK,
+        'content': '''"Ah sí?" respondiste sacando una de tus katanas. "Entonces también sabes que vengo a cortarte el cuello".''',
+        'children': [22]
+    },
+    21: {
+        'type': NodeType.BLANK,
+        'content': '''Reíste sacando una de tus katanas. "Entonces también sabes que vengo a cortarte el cuello".''',
+        'children': [22]
+    },
+    22: {
+        'type': NodeType.FIGHT,
+        'content': '''Hagamos esto rápido.''',
+        'options': ['"Más rápido, bebé?"'],
+        'children':[23],
+        'character': 5,
+        'set': 2
+    },
+    23: {
+        'type': NodeType.BLANK,
+        'content': '''Cuando Doctor Strange cayó al piso muerto te acercaste a su cadáver para quitarle el collar místico. "Ojo de qué cosa? Como sea, sólo me importa la piedrita verde que está adentro" al decir esto rompiste la reliquia y sacaste la gema verde.''',
+        'children': [24]
+    },
+    24: {
+        'type': NodeType.SPECIAL,
+        'content': '''Ahora tienes en tu posesión la inigualable Gema del Tiempo. Podrías usarla para ver todos los futuros posibles o podrías simplemente seguir con tu vida matando héroes como si nunca hubieras encontrado la gema.
+
+Decides''',
+        'options': ['Ver los futuros','Seguir adelante'],
+        'children': [25,26],
+        'stone': InfinityStones.GREEN
+    },
+    25: {
+        'type': NodeType.BLANK,
+        'content': '''Con la Gema del Tiempo en tus manos te sientas en el suelo de la biblioteca, sabiendo que esto tomará un rato, y observas todos los futuros posibles.
+
+Y entonces lo ves. Ves un futuro en el que logras revivir a Vanessa y son felices juntos.''',
+        'children': [27]
+    },
+    26: {
+        'type': NodeType.BLANK,
+        'content': '''Ignorando los poderes de la Gema del Tiempo, decides googlear "planetas épicos del Universo Marvel" y entre las opciones te llama la atención un planeta llamado Morag.
+
+Suena a un planeta con gente poderosa en el que ocurren peleas épicas... o también suena como la banda 'Morat', pero decidiste ignorar eso.''',
+        'children': [28]
+    },
+    27: {
+        'type': NodeType.BLANK,
+        'content': '''Así que harás todo lo posible por seguir ese plan al pie de la letra.
+
+Primera parada: un planeta llamado Morag, un lugar en el que nunca has estado pero sin problema matarás a todo el mundo de todas formas.''',
+        'children': [28]
+    },
+    28: {
+        'type': NodeType.BLANK,
+        'content': '''Te teletransportas a Morag y de inmediato ves a los Guardianes de la Galaxia protegiendo el Orbe. 
+
+Sin duda te acercas a saludar muy amablemente, es decir, con tu arma le apuntas en la cabeza a quien parece ser el líder.''',
+        'children': [29]
+    },
+    29: {
+        'type': NodeType.DIALOGUE,
+        'content': '''"Baja el arma. Ya mismo" dijo, apuntándote con una pistola que era casi tan grande como todo su cuerpo.''',
+        'options': ['"Aw, un mapache"', '"No lo haré"'],
+        'children': [30,30],
+        'character': 8
+    },
+    30: {
+        'type': NodeType.DIALOGUE,
+        'content': '''"Calma, Rocket. Lo tengo bajo control" dijo hacia su compañero y luego te habló a ti a los ojos. "Quién putas eres y qué clase de arma patética es esa?"''',
+        'options': ['Reír', 'Explicar'],
+        'children': [31,32],
+        'character': 6
+    },
+    31: {
+        'type': NodeType.BLANK,
+        'content': '''"Ah, no conocen mi nombre?" preguntaste riendo. "Pues no lo necesitan, de todas formas morirán en unos cuantos minutos".''',
+        'children': [33]
+    },
+    32: {
+        'type': NodeType.BLANK,
+        'content': '''"Mi nombre es Deadpool, pero el día de hoy estoy interpretando el papel de 'El puto asesino que les vuela los sesos'" explicaste, sin retirar la pistola de la cabeza del muchacho.''',
+        'children': [33]
+    },
+    33: {
+        'type': NodeType.FIGHT,
+        'content': '''"Ah sí? Pues eso lo veremos"''',
+        'options': ['Pelear'],
+        'children':[14],
+        'character': 34,
+        'set': 3
+    },
+    34: {
+        'type': NodeType.BLANK,
+        'content': '''Saltas por los aires y clavas al mapache al suelo con una de tus katanas.
+
+"Dime dónde está la chica de su grupo" exiges mientras Rocket agoniza sin poder moverse.''',
+        'children': [36]
+    },
+    36: {
+        'type': NodeType.BLANK,
+        'content': '''"Quién? Mantis?" respondió Rocket, con dificultad por el dolor.
+
+"No, no la chica insecto" explicaste exacerbado. "La chica verde, la super asesina".''',
+        'children': [37]
+    },
+    37: {
+        'type': NodeType.BLANK,
+        'content': '''"Gamora" respondió Rocket. "No sé dónde está ahora... La última vez que hablamos por WhatsApp me dijo que estaba con su padre y que iban a buscar la Gema del Alma juntos. Ya sabes, como plan familiar".
+
+"Gracias por tu servicio, mapache" fue lo último que dijiste antes de dispararle en la cabeza y terminar con su vida definitivamente.''',
+        'children': [38]
+    },
+    38: {
+        'type': NodeType.BLANK,
+        'content': '''Googleaste "dónde se encuentra la gema del alma" y el todopoderoso Dios Google te respondió que estaba en el planeta Vormir.
+
+Ibas a teletransportarte de inmediato allá, pero entonces notaste el Orbe, el objeto misterioso que los Guardianes de la Galaxia estaban cargando cuando los emboscaste y ahora estaba en el suelo sin protección.''',
+        'children': [39]
+    },
+    39: {
+        'type': NodeType.BLANK,
+        'content': '''Los objetos místicos dentro del Universo Marvel sólo pueden significar algo muy poderoso, así sin esperar ni un segundo tomaste el arma del mapache muerto y le disparaste al Orbe.
+
+Al abrirse encontraste en su interior una brillante gemita morada.''',
+        'children': [40]
+    },
+    40: {
+        'type': NodeType.SPECIAL,
+        'content': '''No sabías su nombre así que lo googleaste. 'Gema del Poder', así se llamaba. Era un nombre genial, mucho mejor que el de todas las otras gemas.
+
+Como propietario de la Gema del Poder decides probar sus poderes destruyendo''',
+        'options': ['todo Morag','un edificio'],
+        'children': [41,42],
+        'stone': InfinityStones.PURPLE
+    },
+    41: {
+        'type': NodeType.BLANK,
+        'content': '''Como propietario de la Gema del Poder decides probar sus poderes destruyendo todo el planeta Morag. Tarea que te resulta bastante sencilla.
+
+Justo antes de que el planeta colapse sobre sí mismo bajo tus pies logras teletransportarte a Vormir para seguir con tu misión de enfrentarte a todo el Universo Marvel.''',
+        'children': [43]
+    },
+    42: {
+        'type': NodeType.BLANK,
+        'content': '''Como propietario de la Gema del Poder decides probar sus poderes destruyendo un edificio cercano. Tarea que te resulta bastante sencilla, pero luego sueltas un pequeño "Ups" al ver a varias personas cayendo por las ventanas del edificio y luego muriendo aplastadas por él.
+
+Decides ignorar lo que pasó y teletransportarte a Vormir para seguir con tu misión de enfrentarte a todo el Universo Marvel.''',
+        'children': [43]
+    },
+    43: {
+        'type': NodeType.BLANK,
+        'content': '''Al llegar a Vormir divisas a Thanos y a Gamora subiendo una montaña oscura. En seguida te teletrasportas a su lado y sigues subiendo la montaña junto a ellos.
+
+"Hola. Cómo están?" saludas con naturalidad. "Que buen día para hacer senderismo, no creen?".''',
+        'children': [44]
+    },
+    44: {
+        'type': NodeType.DIALOGUE,
+        'content': '''"Quién eres? También vienes por la Gema del Alma?" preguntó sosteniendo su daga frente a tu cuello.''',
+        'options': ['Negar', 'Coquetearle'],
+        'children': [45,45],
+        'character': 9
+    },
+    45: {
+        'type': NodeType.BLANK,
+        'content': '''"No. En realidad vengo por ti, guapa" dijiste haciendo un gesto coqueto, pero por desgracia cayendo en cuenta tarde de que no se vería a través de la máscara. Gamora se mantuvo inmóvil.
+
+"Verás, mi nombre es Deadpool y según los cómics tú eres una de las asesinas más temidas del universo" seguiste. "Por eso vengo a proponerte un duelo".''',
+        'children': [46]
+    },
+    46: {
+        'type': NodeType.DIALOGUE,
+        'content': '''"Y qué te hace creer que eres digno de tener un duelo conmigo?"''',
+        'options': ['"Mi reputación"', '"Mi carisma"'],
+        'children': [47,47],
+        'character': 9
+    },
+    47: {
+        'type': NodeType.DIALOGUE,
+        'content': '''"Déjalo, Gamora. Tenemos una misión importante que cumplir, no podemos perder tiempo con este debilucho."''',
+        'options': ['Ofenderte', 'Amenazar'],
+        'children': [48,49],
+        'character': 10
+    },
+    48: {
+        'type': NodeType.BLANK,
+        'content': '''"Perdón?? Debilucho dijiste??" preguntaste completamente ofendido. "Apuesto a que no imaginas de lo que soy capaz".
+
+Rápidamente golpeaste el brazo de Gamora, haciendo que dejara caer su daga al suelo, y luego le apuntaste en el cuello con tu pistola. "Si quieres seguir acompañando a tu papá en su salida familiar entonces tendrás que pasar sobre mi cadáver".''',
+        'children': [50]
+    },
+    49: {
+        'type': NodeType.BLANK,
+        'content': '''Rápidamente golpeaste el brazo de Gamora, haciendo que dejara caer su daga al suelo, y luego le apuntaste en el cuello con tu pistola.
+
+"Pues lamento informártelo hasta ahora, grandulón, pero la princesa Fiona tendrá que pasar sobre mi cadáver si quiere seguir con esa misión que tiene pendiente contigo".''',
+        'children': [50]
+    },
+    50: {
+        'type': NodeType.DIALOGUE,
+        'content': '''"Quieres que lo aplaste de un sólo puño, querida?"''',
+        'options': ['"Awww"', '"Inténtalo"'],
+        'children': [51,51],
+        'character': 10
+    },
+    51: {
+        'type': NodeType.FIGHT,
+        'content': '''"No. Déjalo, papá. Quiero matar a este yo misma"''',
+        'options': ['"Éntrale entonces"'],
+        'children':[52],
+        'character': 9,
+        'set': 4
+    },
+    52: {
+        'type': NodeType.BLANK,
+        'content': '''Thanos, aún enojado por la muerte de su hija favorita, te aplasta contra el suelo y en ese momento, mientras agonizas, recuerdas que tienes la Gema del Poder contigo.
+
+Al recuperarte del golpe sacas la gema moradita de tu bolsillo y acabas con Thanos en una explosión que destruye gran parte de la montaña. "Miren eso! Monstruo morado vencido con una gema morada" dices al aire sonriendo satisfecho.''',
+        'children': [53]
+    },
+    53: {
+        'type': NodeType.BLANK,
+        'content': '''De repente curioso por la misión familiar de los fallecidos Gamora y Thanos decides terminar de subir la montaña, pero pronto te cansas y mejor te teletransportas hasta la cima.
+
+Allí encuentras a un tipo rojo con capa negra.''',
+        'children': [54]
+    },
+    54: {
+        'type': NodeType.DIALOGUE,
+        'content': '''"Es gracioso, esta es la primera vez que pasa esto".''',
+        'options': ['"Me hablas a mí?"', '"Tú eres?"'],
+        'children': [55,55],
+        'character': 11
+    },
+    55: {
+        'type': NodeType.DIALOGUE,
+        'content': '''"Mi nombre es Red Skull. Fui desterrado aquí para guíar a quienes vengan a Vormir hacia la Gema del Alma y al verte iba a comenzar con mi discurso, todo eso de 'Para reclamar la Gema del Alma debes sacrificar aquello que más amas, blablabla'... pero esta es la primera vez que no es necesario".''',
+        'options': ['"Qué?"', '"Explícate"'],
+        'children': [56,56],
+        'character': 11
+    },
+    56: {
+        'type': NodeType.DIALOGUE,
+        'content': '''"Es cierto, para poder tener la Gema del Alma tienes que perder aquello que más amas... pero tú ya lo perdiste. Ya no queda nada en este mundo que ames.
+
+Así que la gema es tuya".''',
+        'options': ['"En serio?"', '"Así sin más?"'],
+        'children': [57,57],
+        'character': 11
+    },
+    57: {
+        'type': NodeType.BLANK,
+        'content': '''Viste una luz azul cubrir toda la montaña y luego, sin darte cuenta cómo habías llegado ahí, te encontrabas flotando en un lago, sosteniendo la Gema del Alma en tus manos.
+
+Saltaste de la alegría y decidiste volver a teletransportarte a la cima de la montaña para agradecerle a Red Skull, es decir pegarle un tiro en el cráneo... Literalmente en el cráneo.''',
+        'children': [58]
+    },
+    58: {
+        'type': NodeType.FIGHT,
+        'content': '''"Oh, volviste."''',
+        'options': ['"Por tu cabeza"'],
+        'children':[60],
+        'character': 11,
+        'set': 5
+    },
+    59: {
+        'type': NodeType.BLANK,
+        'content': '''Decidiste usar la Gema del Espacio para teletransportarte a otra parte alejada de la montaña. No porque seas un cobarde, sino porque Red Skull no estaba dando una buena pelea así que no tenía sentido seguir con ella.
+
+Entonces viste a Black Widow y a Hawkeye, que venían subiendo la montaña de Vormir mientras charlaban.''',
+        'children': [61]
+    },
+    60: {
+        'type': NodeType.BLANK,
+        'content': '''Usaste la Gema del Poder nuevamente y convertiste a Red Skull en polvo instantáneamente. Esa gemita morada se estaba convirtiendo en tu mejor amiga.
+
+Sin más que hacer decidiste viajar a otro lugar de la galaxia, un lugar donde sí hubieran buenas peleas. El destino que elegiste fue Asgard, el hogar de los dioses griegos. O eran noruegos? Como sea, de seguro ellos sí saben pelear de verdad.''',
+        'children': [101]
+    },
+    61: {
+        'type': NodeType.DIALOGUE,
+        'content': '''"Después de salvar el mundo deberíamos sentar cabeza... comprar una cabaña... mudarnos a Canadá... No sé, ¿qué opinas?" habló sonriéndole a Black Widow.''',
+        'options': ['"Recién casados?"', '"Awww"'],
+        'children': [62,62],
+        'character': 19
+    },
+    62: {
+        'type': NodeType.FIGHT,
+        'content': '''"Quién eres y qué haces aquí?" preguntó apuntándote con su arma. "Ah, espera... Tú eres Red Skull?"''',
+        'options': ['Asesinar'],
+        'children':[63],
+        'character': 18,
+        'set': 8
+    },
+    63: {
+        'type': NodeType.BLANK,
+        'content': '''Usaste la Gema del Espacio para transportarte de vuelta a la Tierra y mientras bailabas al ritmo de tu playlist de Wham! con tus audífonos puestos compraste una chimichanga en uno de tus restaurantes de confianza.
+
+No hay nada como el hogar. En especial después de haber asesinado a tantas personas.''',
+        'children': [64]
+    },
+    64: {
+        'type': NodeType.BLANK,
+        'content': '''Quizás coleccionar piedritas de colores y matar a tantos héroes no te había curado el corazón, pero definitivamente te había vuelto a sentir vivo.
+
+Ya es hora de descansar y quitarte esa máscara que llevabas puesta todo el día.''',
+        'children': [101]
+    },
+
+
+
+    101: {
         'type': NodeType.UNDEFINED,
         'content': "",
         'options': [],

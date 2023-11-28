@@ -59,49 +59,63 @@ Ponto comenzaron una pelea, Iron Man disparándote ráfagas de energía con sus 
                 "view/assets/characters/mini_alive/doctor-vivo.png",
                 "view/assets/characters/mini_dead/doctor-muerto.png",
                 (1020, 160),
-                NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU])
+                NodeSimple(NodeType.STORY, '''Doctor Strange se acercó a ti con las manos en alto, rindiéndose. "Espera, maguito. De verdad no piensas pelear?" interrogaste. "Ya vi todos los futuros posibles y en todos me matas y te llevas el Ojo de Agamotto. No tiene caso pelear" explicó resignado.
+
+"Oh, es una lástima, Harry Potter. Pensé que iba a divertirme contigo y con tu capita mágica".''', ['Cortar cabeza', 'Tiro en la frente'], [Code.DKTMU, Code.DKTMU])
                 ),
     6: Character("Star-Lord",
                 "view/assets/characters/nodes/starlord.png",
                 "view/assets/characters/mini_alive/starlord-vivo.png",
                 "view/assets/characters/mini_dead/starlord-muerto.png",
                 (810, 160),
-                NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU])
+                NodeSimple(NodeType.STORY, '''Disparaste, pero Star-Lord fue más rápido y no sólo se agachó antes de la bala saliera de tu arma, sino que además te hizo zancadilla en un rápido movimiento y luego te apuntó con su arma psicodélica. O se llamaba arma intergaláctica?
+
+"Explícate. Quién te mandó?" exigió Star-Lord, sin mover su arma.''', ['"Tu mamá"', '"Vengo del futuro"'], [Code.DKTMU, Code.DKTMU])
                 ),
     7: Character("Groot",
                 "view/assets/characters/nodes/groot.png",
                 "view/assets/characters/mini_alive/groot-vivo.png",
                 "view/assets/characters/mini_dead/groot-muerto.png",
                 (930, 260),
-                NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU])
+                NodeSimple(NodeType.STORY, '''En un rápido movimiento te pusiste de pie mientras sacabas tus katanas y le cortaste la garganta a Star-Lord, quien cayó de rodillas agonizando.
+
+El mapache se acercó para ayudar a Star-Lord, mientras que el hombre árbol salió corriendo hacia ti.''', ['Burlarte', 'Hacer un chiste'], [Code.DKTMU, Code.DKTMU])
                 ),
     8: Character("Rocket Raccoon",
                 "view/assets/characters/nodes/rocket.png",
                 "view/assets/characters/mini_alive/rocket-vivo.png",
                 "view/assets/characters/mini_dead/rocket-muerto.png",
                 (810,370),
-                NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU])
+                NodeSimple(NodeType.STORY, '''"Cuál es tu poder especial? Hacer fotosíntesis?" preguntaste, riendo. Groot alargó una de sus manos y la usó para estrangularte, pero rápidamente la cortaste usando tus katanas. Luego seguiste cortando hasta que en unos segundos Groot no era más que tajadas de papel.
+
+"Pagarás por esto!" gritó el mapache, Rocket Raccoon, corriendo hacia ti.''', ['"No lo creo"', '"Algún día"'], [Code.DKTMU, Code.DKTMU])
                 ),
     9: Character("Gamora",
                 "view/assets/characters/nodes/gamora.png",
                 "view/assets/characters/mini_alive/gamora-vivo.png",
                 "view/assets/characters/mini_dead/gamora-muerto.png",
                 (670,375),
-                NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU])
+                NodeSimple(NodeType.STORY, '''Gamora hizo un movimiento ágil para agacharse al suelo, tomar de vuelta su daga y luego clavarla en tu pecho, pero entonces quedó perpleja al ver como tú no morías ni aparentabas dolor.
+
+Mientras Gamora estaba sorprendida e inmóvil tú le disparaste''', ['en el cuello', 'en el pecho'], [Code.DKTMU, Code.DKTMU])
                 ),
     10: Character("Thanos",
                  "view/assets/characters/nodes/thanos.png",
                  "view/assets/characters/mini_alive/thanos-vivo.png",
                  "view/assets/characters/mini_dead/thanos-muerto.png",
                  (560,515),
-                 NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU])
+                 NodeSimple(NodeType.STORY, '''Disparaste una, dos y tres veces y Gamora cayó muerta. "Ain, pensé que pelear con la chica Grinch iba a ser más divertido" fue tu única reacción.
+
+"Pero qué has hecho??" Thanos, enfúrecido, te lanza fuera de la montaña de un golpe y al caer de tal altura te rompes la mayoría de los huesos. Después de unos minutos, ya recuperado, te teletransportas junto a Thanos y gritas''', ['"Debilucho decías??"', '"No hemos terminado"'], [Code.DKTMU, Code.DKTMU])
                  ),
     11: Character("Red Skull",
                  "view/assets/characters/nodes/skull.png",
                  "view/assets/characters/mini_alive/skull-vivo.png",
                  "view/assets/characters/mini_dead/skull-muerto.png",
                  (1020,400),
-                 NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU])
+                 NodeSimple(NodeType.STORY, '''"Por tu cabeza... Bueno, por tu cráneo. Tú entiendes a lo que me refiero" el chiste no salió tan bien, pero estabas aquí por la pelea. 
+
+Disparaste varias veces, pero las balas parecían no hacerle ningún efecto a Red Skull, por lo que usaste la Gema de''', ['el Espacio', 'el Poder'], [59, Code.DKTMU])
                  ),
     12: Character("Thor",
                  "view/assets/characters/nodes/thor.png",
@@ -150,14 +164,16 @@ Ponto comenzaron una pelea, Iron Man disparándote ráfagas de energía con sus 
                  "view/assets/characters/mini_alive/widow-vivo.png",
                  "view/assets/characters/mini_dead/widow-muerto.png",
                  (755,515),
-                 NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU])
+                 NodeSimple(NodeType.STORY, '''"No, no lo soy. Pero ese fantasmón ya no les va a servir de nada" dijiste mientras le cortabas el cuello a Black Widow con una de tus katanas.
+
+Haweye sacó su arco rápidamente y comenzó a lanzarte flechas, que simplemente atravesaban tu cuerpo sin matarte. "O, pero miren que tenemos aquí, es''', ['Robin Hood!"', 'Legolas!"'], [Code.DKTMU, Code.DKTMU])
                  ),
     19: Character("Hawkeye",
                  "view/assets/characters/nodes/hawkeye.png",
                  "view/assets/characters/mini_alive/hawkeye-vivo.png",
                  "view/assets/characters/mini_dead/hawkeye-muerto.png",
                  (920,515),
-                 NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU])
+                 NodeSimple(NodeType.STORY, '''Después de tu mal chiste te acercaste al arquerito y cortaste su cuello al igual que habías hecho con Black Widow. Ya no quedaba más sino teletransportarte de vuelta a la tierra para''', ['Comer', 'Bailar'], [Code.DKTMU, Code.DKTMU])
                  )
 }
 
