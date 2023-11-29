@@ -88,8 +88,8 @@ Una vez en la Torre Stark sacaste tu pistola y le apuntaste a Tony. No estabas d
     },
     12: {
         'type': NodeType.DIALOGUE,
-        'content': '''x''',
-        'options': ['c', 'c'],
+        'content': '''"Pero que malos modales, chico. No querías una reunión para charlar? Baja el arma y hablémoslo"''',
+        'options': ['"Habla con la mano"', '"Eso no pasará"'],
         'children': [13,13],
         'character': 3
     },
@@ -138,7 +138,7 @@ Caminando por allí mientras buscas un bar ves a los Guardianes de la Galaxia pr
         'type': NodeType.DIALOGUE,
         'content': '''"Sabía que vendrías, Deadpool"''',
         'options': ['"Ah sí?"', 'Reír'],
-        'children': [13,13],
+        'children': [20,21],
         'character': 5
     },
     20: {
@@ -425,7 +425,7 @@ Sin más que hacer decidiste viajar a otro lugar de la galaxia, un lugar donde s
     },
     61: {
         'type': NodeType.DIALOGUE,
-        'content': '''"Después de salvar el mundo deberíamos sentar cabeza... comprar una cabaña... mudarnos a Canadá... No sé, ¿qué opinas?" habló sonriéndole a Black Widow.''',
+        'content': '''"Después de salvar el mundo deberíamos sentar cabeza... comprar una cabaña... mudarnos a Canadá... No sé, qué opinas?" habló sonriéndole a Black Widow.''',
         'options': ['"Recién casados?"', '"Awww"'],
         'children': [62,62],
         'character': 19
@@ -447,14 +447,14 @@ No hay nada como el hogar. En especial después de haber asesinado a tantas pers
     },
     64: {
         'type': NodeType.BLANK,
-        'content': '''Quizás coleccionar piedritas de colores y matar a tantos héroes no te había curado el corazón, pero definitivamente te había vuelto a sentir vivo.
+        'content': '''Quizás coleccionar piedritas de colores y matar a tantos héroes no te había curado el corazón, pero definitivamente te había permitido volver a sentirte vivo.
 
-Ya es hora de descansar y quitarte esa máscara que llevabas puesta todo el día.''',
+Después de tu aventura ya era hora de descansar, comer y quitarte esa máscara que llevabas puesta todo el día...''',
         'children': [101]
     },
     65: {
         'type': NodeType.DIALOGUE,
-        'content': '''"¿Quién eres?"''',
+        'content': '''"Quién eres?"''',
         'options': ['"Yo"', '"Deadpool"'],
         'children': [66,66],
         'character': 12
@@ -476,19 +476,25 @@ Ya es hora de descansar y quitarte esa máscara que llevabas puesta todo el día
     },
     68: {
         'type': NodeType.BLANK,
-        'content': '''Loki se acercó a ti dispuesto a asesinarte, pero ya estabas algo cansado así que simplemente usaste de nuevo la Gema del Poder en tu bolsillo y lo asesinaste rápidamente.''',
-        'children': [70]
-    },
-    70: {
-        'type': NodeType.SPECIAL,
-        'content': '''Caminaste por Asgard a tu antojo y en el sótano te encontraste con una gema roja, así que la llevaste contigo ya que al parecer ahora coleccionabas piedras.
-
-"Hmn, ¿ahora a dónde debería ir? Que sea un lugar divertido... y al que no haya ido aún... Ah, ya sé, a Wakanda! Por favor, jugador, por favor, por favor vamos a Wakanda".''',
-        'options': ['Está bien','Nop'],
-        'children': [69,74],
-        'stone': InfinityStones.RED
+        'content': '''Loki se acercó a ti dispuesto a asesinarte, pero ya estabas algo cansado así que simplemente usaste de nuevo la Gema del Poder en tu bolsillo y lo mataste rápidamente.''',
+        'children': [69]
     },
     69: {
+        'type': NodeType.SPECIAL,
+        'content': '''Caminaste por Asgard a tu antojo y en el sótano, en la colección de reliquias Asgardianas, te encontraste con una gema roja, así que la llevaste contigo ya que al parecer ahora coleccionabas piedras.
+
+"Hmn, ¿ahora a dónde debería ir?" te preguntabas. "Que sea un lugar divertido y al que no haya ido aún... Ah, ya sé, a Wakanda! Por favor, jugador, por favor, por favor vamos a Wakanda".''',
+        'options': ['Está bien','Nop'],
+        'children': [70,35],
+        'stone': InfinityStones.RED
+    },
+    35: {
+        'type': NodeType.STORY,
+        'content': '''"Pero por favoooor. Por favorcito, jugador. Vamos a Wakanda"''',
+        'options': ['Agt, está bien', 'Ok, Deadpool!'],
+        'children': [70, 70]
+    },
+    70: {
         'type': NodeType.BLANK,
         'content': '''Te teletransportaste a Wakanda y en un pasillo de la fortaleza real viste a Black Panther pasar, así que te acercaste a saludar.
 
@@ -511,19 +517,121 @@ Ya es hora de descansar y quitarte esa máscara que llevabas puesta todo el día
     },
     73: {
         'type': NodeType.BLANK,
-        'content': '''Ahora que tu misión ha terminado ya puedes descansar y quitarte la máscara que llevabas puesta todo el día.''',
-        'children': [101]
+        'content': '''Aunque no sabían quién eras todos en Wakanda eran tan amables que mientras caminaban, Shuri y su hermano te explicaron lo que estaban tramando: querían quitarle a Visión la Gema de la Mente de una forma segura, sin que eso implique matarlo.''',
+        'children': [74]
+    },
+    74: {
+        'type': NodeType.DIALOGUE,
+        'content': '''"Me alegra que llegaran! Shuri, nos han dicho que si existe una persona que pueda separar a Visión de la Gema de la Mente eres tú. Ah, hola T'Challa, no te habíá visto y hola... no sé quién eres, tú, el de rojo"''',
+        'options': ['"Pool, Dead-pool"', '"No soy nadie"'],
+        'children': [75,75],
+        'character': 16
+    },
+    75: {
+        'type': NodeType.DIALOGUE,
+        'content': '''"Como sea. Shuri, te estaba diciendo... Necesitamos que hagas esto, por favor. Thanos está buscando la Gema y sabemos que va a asesinar a Visión de ser necesario".''',
+        'options': ['"Thanos? JAJAJA"', '"No se preocupen"'],
+        'children': [76,77],
+        'character': 16
+    },
+    76: {
+        'type': NodeType.BLANK,
+        'content': '''"Thanos? JAJAJA" interrumpiste con una carcajada. "No tienen nada de qué preocuparse. Thanos ya no es un peligro para ustedes".''',
+        'children': [79]
     },
     77: {
-        'type': NodeType.STORY,
-        'content': '''"Pero por favoooor, por favorcito. Vamos a Wakanda"''',
-        'options': ['Agt, ok', 'Está bien!'],
-        'children': [69, 69]
+        'type': NodeType.BLANK,
+        'content': '''"No se preocupen" interrumpiste. "Thanos ya no es un peligro para ustedes".''',
+        'children': [79]
     },
+    79: {
+        'type': NodeType.DIALOGUE,
+        'content': '''"Y cómo lo sabes?"''',
+        'options': ['Decir la verdad', '"Lo presiento"'],
+        'children': [80,81],
+        'character': 17
+    },
+    80: {
+        'type': NodeType.BLANK,
+        'content': '''"Porque yo mismo lo maté" explicaste.
 
+Todos soltaron una fuerte carcajada, así que fingiste reír con ellos.''',
+        'children': [82]
+    },
+    81: {
+        'type': NodeType.BLANK,
+        'content': '''"No lo sé pero... Lo presiento." disimulaste. "Presiento que ya no quiere ir a buscar la Gema de la Mente"''',
+        'children': [83]
+    },
+    82: {
+        'type': NodeType.DIALOGUE,
+        'content': '''"Sí, claro" Shuri rio una vez más antes de seguir hablando y luego volvió a la conversación seria que estaban teniendo antes del aporte de Deadpool. "Wanda, Visión... Creo que puedo hacerlo. Pero no sé cuánto tiempo tarde."''',
+        'options': ['"Sí, ignórenme..."', '"Por qué no me oyen?"'],
+        'children': [84,84],
+        'character': 15
+    },
+    83: {
+        'type': NodeType.DIALOGUE,
+        'content': '''"Si presientes eso es porque no conoces a Thanos" señaló Shuri con dureza, para luego volver a la conversación seria que estaban teniendo antes del aporte de Deadpool. "Wanda, Visión... Creo que puedo hacerlo. Pero no sé cuánto tiempo tarde."''',
+        'options': ['"Sí, ignórenme..."', '"Por qué no me oyen?"'],
+        'children': [84,84],
+        'character': 15
+    },
+    84: {
+        'type': NodeType.DIALOGUE,
+        'content': '''"Gracias, Shuri. Significa mucho para nosotros"''',
+        'options': ['"Estoy pintado en la pared"', '"Siguen ignorándome..."'],
+        'children': [85,85],
+        'character': 16
+    },
+    85: {
+        'type': NodeType.FIGHT,
+        'content': '''"Bien. Entonces comencemos con el procedimiento" dijo acomodando una especie de camilla. "Sigue, Visión, puedes sentarte por aquí".''',
+        'options': ['"Nop, se cancela"'],
+        'children':[86],
+        'character': 14,
+        'set': 7
+    },
+    86: {
+        'type': NodeType.SPECIAL,
+        'content': '''Por desgracia no supiste la respuesta a esa pregunta porque mataste a Visión con una segunda explosión morada en el laboratorio al haber olvidado que aún sostenías la Gema del Poder en tu mano.
 
+"Ups. Perdona, laboratorio, no quería herirte a ti" avanzaste entre los escombros hasta el cadáver de Visión y luego arrancaste la Gema de la Mente de su Frente para guardarla en tu bolsillo junto a las demás.''',
+        'options': ['Celebrar','Probar su poder'],
+        'children': [87,88],
+        'stone': InfinityStones.YELLOW
+    },
+    87: {
+        'type': NodeType.BLANK,
+        'content': '''Decidiste celebrar tu adquisisión con una buena comida, así que volviste a la tierra y mientras bailabas al ritmo de tu playlist de Wham! con tus audífonos puestos compraste una chimichanga en uno de tus restaurantes de confianza.
 
+No hay nada como el hogar. En especial después de haber asesinado a tantas personas.''',
+        'children': [64]
+    },
+    88: {
+        'type': NodeType.BLANK,
+        'content': '''Querías probar los poderes de la Gema de la Mente, así que te divertiste un buen rato controlando las mentes de los habitantes de Wakanda y haciéndolos hacer cosas absurdas, como bailar la macarena con los pies o ver las películas estúpidas de Wolverine.''',
+        'children': [89]
+    },
+    89: {
+        'type': NodeType.BLANK,
+        'content': '''Cuando te cansaste de todo eso decidiste que querías disfrutar de uno de los más básicos y hermosos placeres terrenales: una buena comida.
 
+Así que volviste a la tierra y mientras bailabas al ritmo de tu playlist de Wham! con tus audífonos puestos compraste una chimichanga en uno de tus restaurantes de confianza.''',
+        'children': [90]
+    },
+    90: {
+        'type': NodeType.BLANK,
+        'content': '''No hay nada como el hogar. En especial después de haber asesinado a tantas personas.
+
+Quizás coleccionar piedritas de colores y matar a tantos héroes no te había curado el corazón, pero definitivamente te había permitido volver a sentirte vivo.''',
+        'children': [91]
+    },
+    91: {
+        'type': NodeType.BLANK,
+        'content': '''Después de tu aventura ya era hora de descansar, comer y quitarte esa máscara que llevabas puesta todo el día...''',
+        'children': [101]
+    },
     101: {
         'type': NodeType.UNDEFINED,
         'content': "",

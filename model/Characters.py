@@ -43,7 +43,7 @@ Al levantarse, Coloso te lanzó por los aires, pero por suerte al caer notaste c
                 (520,160),
                 NodeSimple(NodeType.STORY, '''"Te sugiero que discutamos esto con un whiskey y no con armas, o si no las cosas se pondrán feas" aconsejó Iron Man en un tono serio. "Feas dices?" soltaste una fuerte risa. "Cariño, las cosas siempre se ponen feas cuando estoy involucrado".
 
-Ponto comenzaron una pelea, Iron Man disparándote ráfagas de energía con sus repulsores y tú contraatacando con tus katanas. Lograste romper su traje metálico y dejar el rostro de Iron Man al aire libre. Entonces le''', ['disparaste en la frente', 'cortaste la cabeza'], [Code.DKTMU, Code.DKTMU])
+Pronto comenzaron una pelea, Iron Man disparándote ráfagas de energía con sus repulsores y tú contraatacando con tus katanas. Lograste romper su traje metálico y dejar el rostro de Iron Man al aire libre. Entonces le''', ['disparaste en la frente', 'cortaste la cabeza'], [Code.DKTMU, Code.DKTMU])
                 ),
     4: Character("Hulk",
                 "view/assets/characters/nodes/hulk.png",
@@ -140,28 +140,36 @@ Thor lanzó tu martillo a tu entrepierna y caíste de rodillas del dolor.''', ['
                  "view/assets/characters/mini_alive/black-vivo.png",
                  "view/assets/characters/mini_dead/black-muerto.png",
                  (170,375),
-                 NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU])
+                 NodeSimple(NodeType.STORY, '''"Nop, se cancela" dijiste disparándole a Black Panther de repente. Todos en el laboratorio quedaron en shock. "Qué? Creyeron que venía de visita? Pues no, ingenuos, vengo por cada una de sus cabezas".
+
+Black Panther estaba herido pues no traía su traje, pero de todas formas se lanzó hacia ti.''', ['"Calma, gatito"', '"Yo no haría eso"'], [Code.DKTMU, Code.DKTMU])
                  ),
     15: Character("Shuri",
                  "view/assets/characters/nodes/shuri.png",
                  "view/assets/characters/mini_alive/shuri-vivo.png",
                  "view/assets/characters/mini_dead/shuri-muerto.png",
                  (310,375),
-                 NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU])
+                 NodeSimple(NodeType.STORY, '''Cuando Black Panther corrió hacia ti atravesaste su cuerpo con tu katana de lado a lado.
+
+Shuri soltó un grito de desesperación al ver a su hermano morir frente a sus ojos y tomando una especie de pistola super sofisticada (que aún estaba en desarrollo) de uno de los estantes del laboratorio se acercó a atacarte.''', ['"Éntrale"', '"Dos por uno?"'], [Code.DKTMU, Code.DKTMU])
                  ),
     16: Character("Wanda",
                  "view/assets/characters/nodes/wanda.png",
                  "view/assets/characters/mini_alive/wanda-vivo.png",
                  "view/assets/characters/mini_dead/wanda-muerto.png",
                  (170,515),
-                 NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU])
+                 NodeSimple(NodeType.STORY, '''"Sip, definitivamente están en oferta. Dos hermanos muertos por el precio de uno" dijiste viendo como Shuri te disparaba, pero tú no morías pues claro, no puedes morir. Cuando te aburriste de la situación le disparaste en la frente y su cuerpo inerte cayó junto al de su hermano.
+
+"Acaso sabes lo que has hecho??" gritó Wanda. "Shuri era la única persona que podía separar a Visión de la Gema de la Mente! Ahora ya no nos queda ninguna esperanza!!"''', ['"Ups"', '"Lo siento...?"'], [Code.DKTMU, Code.DKTMU])
                  ),
     17: Character("Vision",
                  "view/assets/characters/nodes/vision.png",
                  "view/assets/characters/mini_alive/vision-vivo.png",
                  "view/assets/characters/mini_dead/vision-muerto.png",
                  (310,515),
-                 NodeSimple(NodeType.STORY, '''XXX''', ['1', '2'], [Code.DKTMU, Code.DKTMU])
+                 NodeSimple(NodeType.STORY, '''Wanda usó sus poderes de energía roja contra ti y por poco termina con tu vida. Estabas feliz, por fin podrías morir... pero entonces viste tu cuerpo regenerándose como siempre.
+
+Desilusionado, sacaste la Gema del Poder de tu bolsillo y mataste a Wanda con una explosión morada que terminó con la mitad del laboratorio. Visión enfureció por la muerte de Wanda y se lanzó hacia ti.''', ['"Era tu novia?"', '"Tú y ella...?"'], [Code.DKTMU, Code.DKTMU])
                  ),
     18: Character("Black Widow",
                  "view/assets/characters/nodes/widow.png",
@@ -170,7 +178,7 @@ Thor lanzó tu martillo a tu entrepierna y caíste de rodillas del dolor.''', ['
                  (755,515),
                  NodeSimple(NodeType.STORY, '''"No, no lo soy. Pero ese fantasmón ya no les va a servir de nada" dijiste mientras le cortabas el cuello a Black Widow con una de tus katanas.
 
-Haweye sacó su arco rápidamente y comenzó a lanzarte flechas, que simplemente atravesaban tu cuerpo sin matarte. "O, pero miren que tenemos aquí, es''', ['Robin Hood!"', 'Legolas!"'], [Code.DKTMU, Code.DKTMU])
+Hawkeye sacó su arco rápidamente y comenzó a lanzarte flechas, que simplemente atravesaban tu cuerpo sin matarte. "Oh, pero miren que tenemos aquí, es...''', ['Robin Hood!"', 'Legolas!"'], [Code.DKTMU, Code.DKTMU])
                  ),
     19: Character("Hawkeye",
                  "view/assets/characters/nodes/hawkeye.png",
